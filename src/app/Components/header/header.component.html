@@ -1,0 +1,33 @@
+<ngb-carousel  [showNavigationIndicators]="showNavigationIndicators" [showNavigationArrows]="showNavigationArrows">
+    <ng-template ngbSlide *ngFor='let image of info.ProfileCovers;'>
+      <div class="picsum-img-wrapper">
+        <img [src]="image" class="ProfileCover" alt="Random first slide">
+      </div>
+      <!-- <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div> -->
+    </ng-template>
+    
+  </ngb-carousel>
+  <div class="main_block">
+
+      <div class="ProfilePicture">
+          <!-- <img [src]="profilePic" class="ProfilePic"> -->
+          <p-image [src]="info.ProfilePic" alt="Image" class="ProfilePic" [preview]="true">
+        </p-image>
+    </div>
+    <div class="ProfileInfo">
+        <h3 class="profileName">{{ info.Name }}</h3>
+        <img [src]="verified" class="verify-badge">
+    </div>
+    <p class="extra_info">Born on {{info.DOB}}<br>Lives in <a href="www.google.com">{{info.Location}}</a></p>
+    <app-tags-info></app-tags-info><hr>
+    <div class="profileabout">
+        <h4>About me</h4>
+        <p class="about">{{info.About}}</p>
+    </div>
+    <app-tags-button></app-tags-button><hr>
+    <app-social-buttons></app-social-buttons>
+</div>
+

@@ -1,0 +1,30 @@
+.edu_head{
+    font-weight:500;
+    margin-bottom: 15px;
+}
+.date{
+    font-size: 15px;
+    color: grey;
+}
+.infotags{
+    display: inline-block;
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px 10px 5px 0px;
+    border-radius: 5px;
+    width: auto;
+    background-color: #f3edff;
+    color: #582be8;
+    font-weight: 600;
+}
+.a-text{
+    margin-top: 20px;
+    text-align: justify;
+    font-family: "Sohne", sans-serif !important;
+    font-size: 15px;
+}
+.infotags:hover{
+    background-color: #582be8;
+    color: #f3edff;
+    cursor: pointer;
+}

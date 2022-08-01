@@ -1,0 +1,29 @@
+.tags_button{
+    display: block;
+}
+.tags{
+    display: inline-block;
+    height: 50px;
+    width: auto;
+    padding:15px;
+    font-size: 14px;
+    border: 1px solid #e4e8f1;
+    margin: 5px 10px 0px 0px;
+    border-radius: 25px;
+
+}
+.button_img{
+    height: 16px;
+    width: 16   px;
+    margin-right: 5px;
+}
+
+.tags:hover{
+    background-color: #e4e8f1;
+    color: rebeccapurple !important;
+    transition: 0.5s;
+}
+a{
+    font-weight: 600;
+    cursor: pointer;    
+}

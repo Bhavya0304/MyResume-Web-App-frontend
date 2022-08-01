@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: "Sohne", sans-serif;
+}
+
+*{
+    line-height: normal;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+*::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar
+{
+	width: 4px;
+  height: 4px;
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: #097bf5;
+}
+
+.custom .p-timeline-event-opposite {
+    display: none !important;
+}
+.custom .p-timeline-event-content {
+    padding-bottom: 20px !important;
+}

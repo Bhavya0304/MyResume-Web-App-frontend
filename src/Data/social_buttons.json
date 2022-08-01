@@ -1,0 +1,25 @@
+{
+    "metadata":{
+
+    },
+    "data":[
+        {
+            "Social Media Name":"Github",
+            "Link":"https://github.com",
+            "Image":"/assets/Images/Icons/github.png",
+            "Color":"#fffff"
+        },
+        {
+            "Social Media Name":"Twitter",
+            "Link":"https://twitter.com",
+            "Image":"/assets/Images/Icons/twitter.png",
+            "Color":"#fffff"
+        },
+        {
+            "Social Media Name":"Linkedin",
+            "Link":"https://linkedin.com",
+            "Image":"/assets/Images/Icons/linkedin.png",
+            "Color":"#fffff"
+        }
+    ]
+}

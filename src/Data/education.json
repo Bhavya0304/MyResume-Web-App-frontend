@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "Timeline Type": "year"
+  },
+  "data": [
+    {
+      "Type": "Middle School",
+      "Value": "Vidhymandir English Medium School",
+      "Year_from": "2010",
+      "Year_to": "2017",
+      "logo":"/assets/Images/Logo/vm.png",
+      "About":"Amazing expirence! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, odio."
+    },
+    {
+      "Type": "High School",
+      "Value": "Ascent School of Science",
+      "Year_from": "2017",
+      "Year_to": "2019",
+      "logo":"/assets/Images/Logo/ascent.jpg",
+      "About":"Amazing expirence! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, odio."
+    },
+    {
+      "Type": "Bachelor of Engineering In Computer Science",
+      "Value": "GTU (Gujarat Technical University)",
+      "Year_from": "2019",
+      "Year_to": "2023",
+      "logo":"/assets/Images/Logo/gtu.png",
+      "About":"Amazing expirence! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, odio."
+    }
+  ]
+}

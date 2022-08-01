@@ -1,0 +1,30 @@
+.tags_info{
+    margin-top: 15px;
+}
+
+.tags{
+    display: inline-block;
+    margin: 0px 5px 5px 0px;
+    height: 50px;
+    width: 50px;
+}
+.tag_a{
+    display: block;
+    height: 50px;
+    width: 50px;
+    transition: 0.5s;
+   
+}
+.img_socials{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    height: 20px;
+    width: 20px;
+}
+.tag_a:hover{
+    background-color: #e4e8f1;
+    /* background-image: linear-gradient(to bottom right, #0100EC, #FB36F4); */
+    border-radius: 50px;
+}

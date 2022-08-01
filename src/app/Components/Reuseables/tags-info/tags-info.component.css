@@ -1,0 +1,18 @@
+.tags_info{
+    display: inline;
+}
+.tags{
+    color: 	#696969;
+    display: inline-block;
+    margin: 0px 5px 5px 0px;
+}
+.tags::before{
+    content: "@";
+}
+.tags::after{
+    margin-left: 5px;
+    content: "-";
+}
+.tags:last-of-type::after{
+    content: "";
+}

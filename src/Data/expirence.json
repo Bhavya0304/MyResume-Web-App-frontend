@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "Timeline Type": "year"
+  },
+  "data": [
+    {
+      "Type": "Web Development",
+      "Value": "Pcube Software Solution",
+      "Year_from": "2021",
+      "Year_to": "2022",
+      "logo":"/assets/Images/Logo/pcube.jpg",
+      "About":"Amazing expirence! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, odio."
+    }
+  ]
+}

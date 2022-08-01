@@ -1,0 +1,8 @@
+<div class="tags_button">
+    
+    <span class="tags" *ngFor="let button of display_buttons">
+        <img [src]="button.Image" class="button_img">
+        <a href="{{button.Link}}">{{ button.Tag_Name }}</a>
+    </span>
+    <span class="tags"><a (click)="showAll()">{{ allShowing ? "Show less.." : "Show more.." }}</a></span>
+    </div>

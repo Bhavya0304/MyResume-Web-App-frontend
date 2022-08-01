@@ -1,0 +1,18 @@
+<h5 class="edu_head">Education</h5>
+ <p-timeline [value]="educations" align="left" [style]="{'margin-bottom':'10px'}" class="custom">
+  <ng-template pTemplate="content" let-event>
+          <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel>
+              <ng-template ngbPanelTitle>
+                <img class="islogo" [src]="event.logo">
+     {{ event.Year_from + ',' + event.Value }}
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <h6><b>{{event.Type}}</b></h6>
+                <p>{{event.About}}</p>
+             </ng-template>
+            </ngb-panel>
+            </ngb-accordion>
+  </ng-template>
+</p-timeline>
+

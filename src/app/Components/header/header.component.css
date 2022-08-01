@@ -1,0 +1,71 @@
+.ProfileCover{
+    width:100%;
+    height: 50vh;
+    transform: scale(1.25);
+}
+.main_block{
+    margin:0px 10%;
+    /* width: 40%; */
+}
+.ProfilePicture{ 
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top:-150px;
+    margin-bottom: -150px;
+    z-index:10;
+}
+::ng-deep .ProfilePic{
+   
+}
+
+ ::ng-deep .ProfilePic span img {
+        height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 4px solid white; 
+    }  
+    ::ng-deep .p-image-preview-indicator{
+        border-radius: 50%;
+    }  
+
+.ProfileInfo{
+    width: 200px;
+    /* text-align: center; */
+    margin-top: 10px;
+}
+.profileName{
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    /* font-weight: 800; */
+}
+.verify-badge{
+    height: 30px;
+    width: 30px;
+    margin: 0px 0px 10px 4px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    text-decoration: underline;
+}
+.extra_info{
+    color: grey;
+    text-align:left;
+    font-size:15px; 
+}
+
+.profileabout{
+    margin-top: 10px;
+}
+.about{
+    font-size: 17px;
+    margin-top: 0;
+    line-height: 18px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}

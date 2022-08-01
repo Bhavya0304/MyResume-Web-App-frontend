@@ -1,0 +1,25 @@
+<h5 class="edu_head">Timeline</h5>
+
+
+<p-timeline [value]="event" align="left" class="custom" (scroll)="scrollHandler($event)">
+    <ng-template pTemplate="marker" let-event>
+        <img [src]="event.Icon.Icon" (error)="this.event.Icon.Icon = '/assets/Images/Icons/clock.png'" width="20px" style="margin: 10px;">
+    </ng-template> 
+    <ng-template pTemplate="content" let-event>
+        <!-- <p-card  [subheader]="event.date"> -->
+           <div style="margin-bottom: 30px;">
+
+               <span class="date">{{event.Date}}</span><br>
+               <img [src]="event.Image" width="100%" style="margin: 10px 0px 10px 0px;" *ngIf="event.Image" (error)="event.Image = ''">
+               <span *ngFor="let item of event.Tags" class="infotags">{{ item.Tag_Name }}</span>
+               <p class="a-text">{{event.Text}}</p>
+              <div [innerHTML]="event.Html | safeHtml"></div>
+            </div>
+               
+               <!-- <img src=""> -->
+        <!-- </p-card> -->
+    </ng-template>
+</p-timeline>
+<div style="width: 100%;text-align:center;margin-bottom: 20px;" *ngIf="!this.end" >
+    <img src="/assets/Images/spinner2.gif" style="height: 50px">
+</div>

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  API_URI:"https://myresume-bhavyajsh.herokuapp.com/api/"
 };
