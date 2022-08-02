@@ -4,7 +4,7 @@ interface Scripts {
   src: string;
 }
 export const ScriptStore: Scripts[] = [
-  { name: 'Embed', src: 'https://cdn.iframe.ly/embed.js' },
+  { name: 'Embed', src: '/assets/JS/embedrun.js' },
   // { name: 'vfsFonts', src: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.59/vfs_fonts.js' }
 ];
 
@@ -23,6 +23,7 @@ export class ScriptService {
     });
    }
    load(...scripts: string[]) {
+    console.log("Script running")
     const promises: any[] = [];
     scripts.forEach((script) => promises.push(this.loadScript(script)));
     return Promise.all(promises);
