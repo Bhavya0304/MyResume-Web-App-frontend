@@ -13,8 +13,7 @@
   <div class="main_block">
 
       <div class="ProfilePicture">
-          <ngx-skeleton-loader count="1" appearance="circle" *ngIf="!contentLoaded" [theme]="{'width':'200px','height':'200px'}"></ngx-skeleton-loader>
-          <p-image [src]="info.ProfilePic" alt="Image" class="ProfilePic" [preview]="true" *ngIf="contentLoaded">
+          <p-image [src]="info.ProfilePic" alt="Image" class="ProfilePic" [preview]="true">
         </p-image>
     </div>
     <div class="ProfileInfo">
@@ -25,7 +24,7 @@
     <app-tags-info></app-tags-info><hr>
     <div class="profileabout">
         <h4>About me</h4>
-        <p class="about">{{info.About}}</p>
+        <p class="about" [innerHtml]="info.About | safeHtml"></p>
     </div>
     <app-tags-button></app-tags-button><hr>
     <app-social-buttons></app-social-buttons>

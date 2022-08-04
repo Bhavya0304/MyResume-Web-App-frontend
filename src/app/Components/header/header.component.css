@@ -15,13 +15,6 @@
     margin-bottom: -150px;
     z-index:10;
 }
-/* ::ng-deep .ProfilePicSkleton span{
-    height: 200px;
-    width: 200px;
-} */
-::ng-deep .ProfilePic{
-   
-}
 
  ::ng-deep .ProfilePic span img {
         height: 200px;

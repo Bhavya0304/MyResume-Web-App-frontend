@@ -4,6 +4,7 @@ import moment from 'moment';
 import { HttpService } from 'src/app/Service/Network/http.service';
 import { offset } from '@popperjs/core';
 import { ScriptService } from 'src/app/Service/Scripts/script.service';
+import {combo} from '../../../Themes/ColorCombinationsBtns';
 // import { iframely } from "@iframely/embed.js";
 
 @Component({
@@ -14,7 +15,7 @@ import { ScriptService } from 'src/app/Service/Scripts/script.service';
 
 
 export class AchievementsComponent implements OnInit{
-
+  combo = combo;
   Offset:number;
   Length:number;
   end:boolean;

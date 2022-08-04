@@ -11,8 +11,7 @@ import { HttpService } from 'src/app/Service/Network/http.service';
 export class HeaderComponent implements OnInit {
   showNavigationArrows = true;
   showNavigationIndicators = true;
-  contentLoaded = false;
-  contentLoadedImg = false;
+  showImg:any;
     info:any;
   // images = info.ProfileCovers;
   // profilePic = info.ProfilePic;
@@ -29,7 +28,6 @@ export class HeaderComponent implements OnInit {
     this.http.getUserInfo().subscribe((Response)=>{
       if(Response.Status == 200){
         this.info = Response.Data.Data;
-        this.contentLoaded = true;
         if(this.info.ProfileCovers.length <= 1){
           this.showNavigationArrows = false;
         }
@@ -38,6 +36,7 @@ export class HeaderComponent implements OnInit {
         console.log(Response);
       }
     })
+
   
   }
 
