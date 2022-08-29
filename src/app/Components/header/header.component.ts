@@ -19,9 +19,9 @@ export class HeaderComponent implements OnInit {
   // DOB = info.DOB;
   // place = info.Location;
   // about= info.About;
-  constructor(config: NgbCarouselConfig,private http:HttpService) { 
-   
-    
+  constructor(config: NgbCarouselConfig,private http:HttpService) {
+
+    this.showImg = false;
   }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
       }
     })
 
-  
+
   }
 
 }

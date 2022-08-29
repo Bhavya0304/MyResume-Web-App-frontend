@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ImageModule} from 'primeng/image';
 import {TimelineModule} from 'primeng/timeline';
+import {TerminalModule} from 'primeng/terminal';
 import {ButtonModule} from 'primeng/button';
 import {ChartModule} from 'primeng/chart';
 import { CardModule } from "primeng/card";
@@ -25,6 +26,8 @@ import { LifechartsComponent } from './Components/body/lifecharts/lifecharts.com
 import { SkillchartsComponent } from './Components/body/skillcharts/skillcharts.component';
 import { AchievementsComponent } from './Components/body/achievements/achievements.component';
 import { SafeHtmlPipe } from './Pipes/safeHtml/safe-html.pipe';
+import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
+import { TerminalComponent } from './Components/Pages/terminal/terminal.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { SafeHtmlPipe } from './Pipes/safeHtml/safe-html.pipe';
     LifechartsComponent,
     SkillchartsComponent,
     AchievementsComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    HomepageComponent,
+    TerminalComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import { SafeHtmlPipe } from './Pipes/safeHtml/safe-html.pipe';
     ImageModule,
     HttpClientModule,
     NgxSkeletonLoaderModule,
-    AccordionModule
+    AccordionModule,
+    TerminalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
