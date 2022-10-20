@@ -18,6 +18,14 @@ export class EducationComponent implements OnInit {
     this.http.getUserEducation().subscribe((Response)=>{
       if(Response.Status == 200){
         this.educations = Response.Data.Data;
+        this.educations.sort((a,b)=>{
+          if(parseInt(a.Year_from) < parseInt(b.Year_from)){
+            return 1;
+          }
+          else{
+            return -1;
+          }
+        })
       }
       else{
         console.log(Response.Error);
