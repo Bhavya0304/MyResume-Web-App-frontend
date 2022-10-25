@@ -1,0 +1,23 @@
+<div class="terminal terminal-border">
+    <div class="terminal-navbar">
+      <div class="navbar-icons">
+        <a [routerLink]="''" ><img src="/assets/Images/Icons/circle.png" class="navbar-icon"></a>
+        <img src="/assets/Images/Icons/round.png" class="navbar-icon">
+        <img src="/assets/Images/Icons/middle.png" class="navbar-icon">
+      </div>
+      <div class="navbar-headings">
+        Ubuntu
+      </div>
+    </div>
+    <div class="terminal-body">
+        <div class="prompt-prev" *ngFor="let vals of shell.ShellObj">
+            <span class="prompt-text">{{ vals.prompt }}</span>
+            <span class="prompt-in"> {{ vals.input }} </span><br>
+            <span class="prompt-out">{{ vals.output }}</span>
+        </div>
+        <div class="prompt-current">
+            <span class="prompt-in">{{ this.shell.prompt }}</span>
+            <input type="text" class="stdin" (keydown.enter)="this.shell.CommandHandler()" [(ngModel)]="this.shell.stdin">
+        </div>
+    </div>
+  </div>

@@ -4,8 +4,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import {AccordionModule} from 'primeng/accordion';
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ImageModule} from 'primeng/image';
@@ -28,6 +33,9 @@ import { AchievementsComponent } from './Components/body/achievements/achievemen
 import { SafeHtmlPipe } from './Pipes/safeHtml/safe-html.pipe';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
 import { TerminalComponent } from './Components/Pages/terminal/terminal.component';
+import { NoUserComponent } from './Components/Pages/no-user/no-user.component';
+import { DashboardComponent } from './Components/Pages/dashboard/dashboard.component';
+import { ITShellComponent } from './Components/Reuseables/itshell/itshell.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +53,10 @@ import { TerminalComponent } from './Components/Pages/terminal/terminal.componen
     AchievementsComponent,
     SafeHtmlPipe,
     HomepageComponent,
-    TerminalComponent
+    TerminalComponent,
+    NoUserComponent,
+    DashboardComponent,
+    ITShellComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +71,11 @@ import { TerminalComponent } from './Components/Pages/terminal/terminal.componen
     HttpClientModule,
     NgxSkeletonLoaderModule,
     AccordionModule,
-    TerminalModule
+    TerminalModule,
+    DialogModule,
+    InputTextModule,
+    PasswordModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

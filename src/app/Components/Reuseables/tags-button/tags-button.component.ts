@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import tag from '../../../../Data/tags_buttons.json';
 import { Directive, ElementRef, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpService } from 'src/app/Service/Network/http.service';
 
 @Component({
@@ -15,12 +16,13 @@ export class TagsButtonComponent implements OnInit {
   showLess:any;
   onMouseEnter:any;
   allShowing = false;
-  constructor(private http:HttpService) { 
+  constructor(private http:HttpService,private route : ActivatedRoute, private router : Router) { 
     
    }
   
   ngOnInit(): void {
-    this.http.getUserSkillTag().subscribe((Response)=>{
+    var user = this.route.snapshot.paramMap.get('id');
+    this.http.getUserSkillTag(user).subscribe((Response)=>{
       console.log(Response);
       if(Response.Status == 200){
         this.buttons = Response.Data.Data;

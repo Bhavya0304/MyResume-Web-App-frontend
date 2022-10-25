@@ -1,4 +1,14 @@
-<div class="terminal terminal-border">
+<p-dialog header="Authentication Required!" [style]="{'background-color':'black'}" [(visible)]="displayModal" [modal]="true" [style]="{width: '25vw'}"
+    [draggable]="false" [resizable]="false">
+    <input type="text" pInputText [(ngModel)]="LoginDetails.username" placeholder="Username"> 
+    <input type="password" pPassword [(ngModel)]="LoginDetails.password" placeholder="Password"> 
+        <ng-template pTemplate="footer">
+        <p-button icon="pi pi-user" (click)="Login()" label="Login" styleClass="p-button"></p-button>
+        <!-- <p-button (click)="displayModal=false" label="Cancel" styleClass="p-button"></p-button> -->
+        </ng-template>
+</p-dialog>
+
+<!-- <div class="terminal terminal-border">
   <div class="terminal-navbar">
     <div class="navbar-icons">
       <a [routerLink]="''" ><img src="/assets/Images/Icons/circle.png" class="navbar-icon"></a>
@@ -10,4 +20,5 @@
     </div>
   </div>
   <p-terminal prompt="bhavya@bhavya[~] " styleClass="terminal"></p-terminal>
-</div>
+</div> -->
+<app-itshell></app-itshell>

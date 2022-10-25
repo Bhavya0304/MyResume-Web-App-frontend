@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {PrimeIcons} from 'primeng/api';
 // import edu from "../../../../Data/education.json"
 import { HttpService } from 'src/app/Service/Network/http.service';
@@ -12,10 +13,11 @@ export class EducationComponent implements OnInit {
 
   educations!:any[];
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService,private route : ActivatedRoute, private router : Router) { }
 
   ngOnInit(): void {
-    this.http.getUserEducation().subscribe((Response)=>{
+    var user = this.route.snapshot.paramMap.get('id');
+    this.http.getUserEducation(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.educations = Response.Data.Data;
         this.educations.sort((a,b)=>{

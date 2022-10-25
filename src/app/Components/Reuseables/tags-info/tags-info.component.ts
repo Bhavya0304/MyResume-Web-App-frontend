@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 // import tag from '../../../../Data/tags_info.json';
 import { HttpService } from 'src/app/Service/Network/http.service';
 
@@ -9,12 +10,13 @@ import { HttpService } from 'src/app/Service/Network/http.service';
 })
 export class TagsInfoComponent implements OnInit {
   tags:any;
-  constructor(private http:HttpService) {
+  constructor(private http:HttpService,private route : ActivatedRoute, private router : Router) {
     
    }
 
   ngOnInit(): void {
-    this.http.getUserInfoTag().subscribe((Response)=>{
+    var user = this.route.snapshot.paramMap.get('id');
+    this.http.getUserInfoTag(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.tags = Response.Data.Data;
       }

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { TerminalService } from 'primeng/terminal';
-import { finalize } from 'rxjs';
+import { JWTService } from 'src/app/Service/Authentication/jwt.service';
+import { ShellService } from 'src/app/Service/ITShell/shell.service';
 
 @Component({
   selector: 'app-terminal',
@@ -11,24 +12,22 @@ import { finalize } from 'rxjs';
 export class TerminalComponent implements OnInit {
   clearOutput: any;
   isClear: boolean;
+  displayModal:boolean;
+  loginStatus:boolean;
+  LoginDetails:{
+    username:string,
+    password:string
+  };
 
-  constructor(private terminalService: TerminalService) {
+  constructor(public shell:ShellService,private terminalService: TerminalService, private jwt:JWTService, private readonly changeDetector: ChangeDetectorRef,) {
     this.isClear = false;
-    this.terminalService.commandHandler.pipe(
-      finalize(()=>{
-        alert("j");
-      })
-    ).subscribe((command) => {
-      if (command === 'date') {
-        this.terminalService.sendResponse(new Date().toDateString());
-      } else if (command == 'clear') {
-        setTimeout(()=>{
-          this.clearOutput();
-        },0);
-      } else {
-        this.terminalService.sendResponse('Unknown Command!');
-      }
-    });
+    this.displayModal = false;
+    this.loginStatus = false;
+    this.LoginDetails = {
+      username:"",
+      password:""
+    };
+
   }
 
   ngOnInit(): void {
@@ -40,5 +39,46 @@ export class TerminalComponent implements OnInit {
         child = b.lastElementChild;
       }
     };
+
+    this.shell.initShell((command:string)=>{
+      if(command == "hello"){
+        return "Hello World!"
+      }
+      else if(command == "clear"){
+        this.shell.ShellObj = [];
+        return null;
+      }
+      else if(command == "login"){
+        if(this.jwt.isLogged){
+          return "Already Logged In!";
+        }
+        this.displayModal = true;
+        return true;
+      }
+      return "";
+  })
+
+   
+
+
+  }
+
+  Login = ()=>{
+    
+    if(this.LoginDetails.username != "" && this.LoginDetails.password != ""){
+       this.jwt.loginUser(this.LoginDetails.username,this.LoginDetails.password).then((res)=>{
+        if(res){
+          this.shell.pipeline(null,"Login done!");
+        }else{
+          this.shell.pipeline(null,"Login Failed, Try Again!");
+        }
+      });
+     
+    }
+    else{
+      this.shell.pipeline(null,"Don't Try to be smart and add details!");
+
+    }
+    this.displayModal = false;
   }
 }

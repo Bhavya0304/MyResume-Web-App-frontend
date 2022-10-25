@@ -5,6 +5,7 @@ import { HttpService } from 'src/app/Service/Network/http.service';
 import { offset } from '@popperjs/core';
 import { ScriptService } from 'src/app/Service/Scripts/script.service';
 import {combo} from '../../../Themes/ColorCombinationsBtns';
+import { ActivatedRoute, Router } from '@angular/router';
 // import { iframely } from "@iframely/embed.js";
 
 @Component({
@@ -35,7 +36,8 @@ scrollHandler(events:any) {
 //  if( parseInt(pos) == parseInt(max))   {
   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
   this.Offset = this.Offset +1;
-  this.http.getUserTimeline({
+  var user = this.route.snapshot.paramMap.get('id');
+  this.http.getUserTimeline(user,{
     offset:this.Offset,
     length:this.Length
   }).subscribe((Response)=>{
@@ -54,7 +56,7 @@ scrollHandler(events:any) {
 }
 
 
-  constructor(private http:HttpService,private scriptService: ScriptService) { 
+  constructor(private http:HttpService,private scriptService: ScriptService,private route : ActivatedRoute, private router : Router) { 
     this.Offset = 1;
     this.Length = 5;
     this.end = false;
@@ -62,8 +64,8 @@ scrollHandler(events:any) {
   }
 
   ngOnInit(): void {
-   
-    this.http.getUserTimeline({
+    var user = this.route.snapshot.paramMap.get('id');
+    this.http.getUserTimeline(user,{
       offset:this.Offset,
       length:this.Length
     }).subscribe((Response)=>{

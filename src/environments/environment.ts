@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URI:"http://localhost:4500/api/"
+  API_URI:"http://localhost:4500/api/",
+  ADMIN_URI:"http://localhost:4500/sudouser/"
 };
 
 /*

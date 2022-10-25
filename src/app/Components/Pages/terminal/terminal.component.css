@@ -12,6 +12,10 @@
 
 }
 
+.dialog{
+  background-color: black;
+}
+
 .terminal-navbar{
   height:40px;
   width: 100%;
@@ -53,6 +57,29 @@
 ::ng-deep .p-terminal-input{
   font-family: 'Ubuntu', sans-serif !important;
 }
+::ng-deep .p-dialog-header,::ng-deep .p-dialog-content,::ng-deep .p-dialog-footer {
+  background-color: #09152d !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+::ng-deep .p-dialog-content{
+  text-align: center;
+}
+::ng-deep .p-dialog-content .p-inputtext{
+  background-color: #09152d;
+  border: 1px solid white;
+  color: white;
+  width: 80%;
+} 
+::ng-deep .p-dialog-content .p-component{
+  margin: 15px;
+}
+::ng-deep  .p-button{
+  background-color: transparent;
+}
+
+
+
 
 
 .navbar-icon{

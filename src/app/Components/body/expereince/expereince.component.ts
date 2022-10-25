@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {PrimeIcons} from 'primeng/api';
 import { HttpService } from 'src/app/Service/Network/http.service';
 import exp from "../../../../Data/expirence.json"
@@ -12,10 +13,11 @@ export class ExpereinceComponent implements OnInit {
 
   expirence!:any[];
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService,private route : ActivatedRoute, private router : Router) { }
 
   ngOnInit(): void {
-    this.http.getUserExperience().subscribe((Response)=>{
+    var user = this.route.snapshot.paramMap.get('id');
+    this.http.getUserExperience(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.expirence = Response.Data.Data;
         this.expirence.sort((a,b)=>{

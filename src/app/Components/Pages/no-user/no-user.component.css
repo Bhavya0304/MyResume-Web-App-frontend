@@ -1,0 +1,18 @@
+.main_div{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.clown-img{
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+}
+
+.md-4{
+margin: 10px;
+font-weight: 700;
+}
