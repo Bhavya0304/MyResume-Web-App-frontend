@@ -1,62 +1,5 @@
-*{
-  font-family: 'Ubuntu', sans-serif;
-}
 
-.terminal{
-  width:80%;
-  height:70vh;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%,-50%);
 
-}
-
-.dialog{
-  background-color: black;
-}
-
-.terminal-navbar{
-  height:40px;
-  width: 100%;
-  display: flex;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding: 5px;
-  line-height: 30px;
-  color: black;
-  border: 1px solid black;
-}
-.navbar-headings{
-  line-height: 30px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%,0);
-  font-weight: 600;
-}
-::ng-deep .p-terminal-prompt-container{
-  margin: 5px 0px;
-}
-::ng-deep .p-terminal-content{
-  font-family: 'Ubuntu', sans-serif !important;
-}
- ::ng-deep .p-terminal{
-  height:70vh  !important;
-  border: 1px solid black;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 10px;
-  background-color: black;
-  color: white;
-}
-::ng-deep .p-terminal-content-prompt{
-  margin-right: 5px;
-  font-family: 'Ubuntu', sans-serif !important;
-}
-
-::ng-deep .p-terminal-input{
-  font-family: 'Ubuntu', sans-serif !important;
-}
 ::ng-deep .p-dialog-header,::ng-deep .p-dialog-content,::ng-deep .p-dialog-footer {
   background-color: #09152d !important;
   color: white !important;
@@ -77,6 +20,8 @@
 ::ng-deep  .p-button{
   background-color: transparent;
 }
+
+
 
 
 

@@ -4,10 +4,15 @@ import { HomepageComponent } from './Components/Pages/homepage/homepage.componen
 import { TerminalComponent } from './Components/Pages/terminal/terminal.component';
 import { DashboardComponent } from './Components/Pages/dashboard/dashboard.component';
 import { NoUserComponent } from './Components/Pages/no-user/no-user.component'
+import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.component';
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent,children:[
+    {
+      path:'userinfo',component:UserInfoComponent
+    }
+  ] },
   { path: '%%no-user%%', component: NoUserComponent },
   { path: ':id', component: HomepageComponent },
   { path: '', component: HomepageComponent }

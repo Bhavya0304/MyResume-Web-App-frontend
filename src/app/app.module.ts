@@ -19,6 +19,8 @@ import {TerminalModule} from 'primeng/terminal';
 import {ButtonModule} from 'primeng/button';
 import {ChartModule} from 'primeng/chart';
 import { CardModule } from "primeng/card";
+import {MenubarModule} from 'primeng/menubar';
+
 import { HeaderComponent } from './Components/header/header.component';
 import { BodyComponent } from './Components/body/body.component';
 import { FooterComponent } from './Components/footer/footer.component';
@@ -36,6 +38,7 @@ import { TerminalComponent } from './Components/Pages/terminal/terminal.componen
 import { NoUserComponent } from './Components/Pages/no-user/no-user.component';
 import { DashboardComponent } from './Components/Pages/dashboard/dashboard.component';
 import { ITShellComponent } from './Components/Reuseables/itshell/itshell.component';
+import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { ITShellComponent } from './Components/Reuseables/itshell/itshell.compon
     TerminalComponent,
     NoUserComponent,
     DashboardComponent,
-    ITShellComponent
+    ITShellComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,8 @@ import { ITShellComponent } from './Components/Reuseables/itshell/itshell.compon
     DialogModule,
     InputTextModule,
     PasswordModule,
-    FormsModule
+    FormsModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

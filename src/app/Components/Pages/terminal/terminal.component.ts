@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TerminalService } from 'primeng/terminal';
 import { JWTService } from 'src/app/Service/Authentication/jwt.service';
 import { ShellService } from 'src/app/Service/ITShell/shell.service';
@@ -19,7 +20,7 @@ export class TerminalComponent implements OnInit {
     password:string
   };
 
-  constructor(public shell:ShellService,private terminalService: TerminalService, private jwt:JWTService, private readonly changeDetector: ChangeDetectorRef,) {
+  constructor(private router : Router,public shell:ShellService,private terminalService: TerminalService, private jwt:JWTService, private readonly changeDetector: ChangeDetectorRef,) {
     this.isClear = false;
     this.displayModal = false;
     this.loginStatus = false;
@@ -39,7 +40,7 @@ export class TerminalComponent implements OnInit {
         child = b.lastElementChild;
       }
     };
-
+    this.shell.prompt = "linux@root>"
     this.shell.initShell((command:string)=>{
       if(command == "hello"){
         return "Hello World!"
@@ -48,9 +49,13 @@ export class TerminalComponent implements OnInit {
         this.shell.ShellObj = [];
         return null;
       }
+      else if(command == "dashboard"){
+        this.router.navigate(['dashboard']);
+        return"";
+      }
       else if(command == "login"){
         if(this.jwt.isLogged){
-          return "Already Logged In!";
+          return "<h6 style='color:red;'>Already Logged In!</h6>";
         }
         this.displayModal = true;
         return true;

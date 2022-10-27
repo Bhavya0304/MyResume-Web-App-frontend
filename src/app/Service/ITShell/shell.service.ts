@@ -11,11 +11,14 @@ export class ShellService {
   prompt:string;
   stdin:string|null;
   Handler!:Function;
+  historyIndex:number;
+
 
   constructor() {
     this.ShellObj = [];
     this.prompt = "Ubuntu[2.1.1]>";
     this.stdin = "";
+    this.historyIndex = 0;
   }
 
    initShell = (Handler:Function)=>{
@@ -38,7 +41,16 @@ export class ShellService {
           });
         }
         this.stdin = "";
+        this.historyIndex = 0;
+
       }
+      }
+
+      History = ()=>{
+        if((this.ShellObj.length -1)-this.historyIndex >= 0){
+          this.stdin = this.ShellObj[(this.ShellObj.length -1)-this.historyIndex].input;
+          this.historyIndex++;
+        }
       }
 
       pipeline = (stdin:string|null,stdout:string)=>{
@@ -50,6 +62,7 @@ export class ShellService {
             prompt:this.prompt
           });
           this.stdin = "";
+          this.historyIndex = 0;
         }
       }
 

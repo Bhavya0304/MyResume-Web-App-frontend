@@ -13,11 +13,11 @@
         <div class="prompt-prev" *ngFor="let vals of shell.ShellObj">
             <span class="prompt-text">{{ vals.prompt }}</span>
             <span class="prompt-in"> {{ vals.input }} </span><br>
-            <span class="prompt-out">{{ vals.output }}</span>
+            <span class="prompt-out" [innerHTML]="vals.output | safeHtml"></span>
         </div>
-        <div class="prompt-current">
+        <div class="prompt-current" style="display: flex;">
             <span class="prompt-in">{{ this.shell.prompt }}</span>
-            <input type="text" class="stdin" (keydown.enter)="this.shell.CommandHandler()" [(ngModel)]="this.shell.stdin">
+            <input type="text" class="stdin" id="stdin" (keydown.enter)="this.shell.CommandHandler()" (keydown.arrowup)="this.shell.History()"  [(ngModel)]="this.shell.stdin">
         </div>
     </div>
   </div>
