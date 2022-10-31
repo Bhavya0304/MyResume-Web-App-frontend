@@ -13,7 +13,7 @@ export class JWTService {
 
   constructor(private Local : LocalStorageService,private http:HttpService) {
     this.StorageClass = Local;
-    this.isLogged = true;
+    this.isLogged = false;
    }
 
    verifyUser = ()=>{
