@@ -74,6 +74,15 @@ export class HttpService {
   verifyUser = (Token:string)=>{
       return this.http.get<Response>(this.server+'verifyuser',{headers:{ Authorization:Token}});
   }
+  getfiles = (Token:string)=>{
+    return this.http.get<Response>(this.server+'getallfiles',{headers:{ Authorization:Token}});
+  }
+  uploadfiles = (Token:string,files:any)=>{
+    return this.http.post<Response>(this.server+'uploadfiles',files,{headers:{ Authorization:Token,Accept:"multipart/form-data"}});
+  }
+  deletefiles = (Token:string,files:any[])=>{
+    return this.http.post<Response>(this.server+'deletefiles',{files:files},{headers:{ Authorization:Token}});
+  }
   userLogin = (username:string,password:string)=>{
       return this.http.post<Response>(this.server+'login',{username:username,password:password});
   }

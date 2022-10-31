@@ -1,0 +1,28 @@
+<p-dialog header="Image Box" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '80vw'}"
+    [draggable]="false" [resizable]="false" [closable]="false">
+    <p-tabView>
+        <p-tabPanel header="All Images" [style]="{'width':'500px'}">
+           <div class="all_files">
+               <img [src]="imgs.url" class="img_files" [alt]="imgs.name" (click)="imgs.isSelected = !imgs.isSelected" *ngFor="let imgs of files" [ngClass]="imgs.isSelected ? 'selected':''">
+           </div>
+           
+        </p-tabPanel>
+        <p-tabPanel header="Upload Files">
+            <p-fileUpload #fileUpload name="files[]" [customUpload]="true" (uploadHandler)="myUploader($event,fileUpload)" [multiple]="mutiple" accept="image/*" [maxFileSize]="1000000" >
+            <!-- <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template> -->
+    </p-fileUpload>
+               
+        </p-tabPanel>
+    </p-tabView>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple type="button" label="Delete" *ngIf="isSelectedCheck()" class="p-button-raised btn-footer p-button-outlined p-button-rounded p-button-danger p-button-text button_del" (click)="deleteFiles()"></button>
+        <p-button icon="pi pi-cross" (click)="onClose()" label="Close" styleClass="p-button-text btn-footer"></p-button>
+    </ng-template>
+</p-dialog>
+<p-toast></p-toast>
+
+

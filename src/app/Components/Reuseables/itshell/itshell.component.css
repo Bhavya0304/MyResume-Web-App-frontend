@@ -4,9 +4,9 @@
   
   .terminal{
     width:80%;
-    height:70vh;
+    height:50vh;
     position: absolute;
-    top:50%;
+    top:37%;
     left:50%;
     transform: translate(-50%,-50%);
   

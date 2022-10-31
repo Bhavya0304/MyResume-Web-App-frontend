@@ -7,6 +7,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,8 @@ import {ButtonModule} from 'primeng/button';
 import {ChartModule} from 'primeng/chart';
 import { CardModule } from "primeng/card";
 import {MenubarModule} from 'primeng/menubar';
+import {TabViewModule} from 'primeng/tabview';
+import {FileUploadModule} from 'primeng/fileupload';
 
 import { HeaderComponent } from './Components/header/header.component';
 import { BodyComponent } from './Components/body/body.component';
@@ -39,6 +42,9 @@ import { NoUserComponent } from './Components/Pages/no-user/no-user.component';
 import { DashboardComponent } from './Components/Pages/dashboard/dashboard.component';
 import { ITShellComponent } from './Components/Reuseables/itshell/itshell.component';
 import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.component';
+import { HandleimagesComponent } from './Components/Sudouser/handleimages/handleimages.component';
+import { ImageboxComponent } from './Components/Reuseables/imagebox/imagebox.component';
+import { CommingSoonComponent } from './Components/Reuseables/comming-soon/comming-soon.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +66,10 @@ import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.com
     NoUserComponent,
     DashboardComponent,
     ITShellComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    HandleimagesComponent,
+    ImageboxComponent,
+    CommingSoonComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +90,9 @@ import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.com
     PasswordModule,
     FormsModule,
     MenubarModule,
+    TabViewModule,
+    FileUploadModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

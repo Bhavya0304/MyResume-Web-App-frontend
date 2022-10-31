@@ -5,13 +5,36 @@ import { TerminalComponent } from './Components/Pages/terminal/terminal.componen
 import { DashboardComponent } from './Components/Pages/dashboard/dashboard.component';
 import { NoUserComponent } from './Components/Pages/no-user/no-user.component'
 import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.component';
+import { HandleimagesComponent } from './Components/Sudouser/handleimages/handleimages.component';
+import { CommingSoonComponent  } from './Components/Reuseables/comming-soon/comming-soon.component'
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
   { path: 'dashboard', component: DashboardComponent,children:[
     {
-      path:'userinfo',component:UserInfoComponent
-    }
+      path:'userinfo',component:CommingSoonComponent
+    },
+    {
+      path:'handlefiles',component:HandleimagesComponent
+    },
+    {
+      path:'usertags',component:CommingSoonComponent
+    },
+    {
+      path:'skilltags',component:CommingSoonComponent
+    },
+    {
+      path:'socialbuttons',component:CommingSoonComponent
+    },
+    {
+      path:'usereducations',component:CommingSoonComponent
+    },
+    {
+      path:'userexperience',component:CommingSoonComponent
+    },
+    {
+      path:'usertimeline',component:CommingSoonComponent
+    },
   ] },
   { path: '%%no-user%%', component: NoUserComponent },
   { path: ':id', component: HomepageComponent },

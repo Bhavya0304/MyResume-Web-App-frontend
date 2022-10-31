@@ -13,7 +13,7 @@ export class JWTService {
 
   constructor(private Local : LocalStorageService,private http:HttpService) {
     this.StorageClass = Local;
-    this.isLogged = false;
+    this.isLogged = true;
    }
 
    verifyUser = ()=>{
@@ -46,6 +46,10 @@ export class JWTService {
       });
       
     });
+   }
+
+   getToken = ()=>{
+    return this.StorageClass.getValue('Token');
    }
 
    logout = ()=>{

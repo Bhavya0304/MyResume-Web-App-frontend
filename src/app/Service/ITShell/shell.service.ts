@@ -46,10 +46,33 @@ export class ShellService {
       }
       }
 
-      History = ()=>{
-        if((this.ShellObj.length -1)-this.historyIndex >= 0){
+      HistoryUp = ()=>{
+        if((this.ShellObj.length -1)-this.historyIndex >= 0 && this.historyIndex >= 0){
           this.stdin = this.ShellObj[(this.ShellObj.length -1)-this.historyIndex].input;
           this.historyIndex++;
+        }
+        else{
+          if(!((this.ShellObj.length -1)-this.historyIndex >= 0)){
+            this.historyIndex = this.ShellObj.length-1;
+          }
+          else{
+            this.historyIndex = 0;
+          }
+        }
+      }
+
+      HistoryDown = ()=>{
+        if((this.ShellObj.length -1)-this.historyIndex >= 0 && this.historyIndex >= 0){
+          this.stdin = this.ShellObj[(this.ShellObj.length -1)-(this.historyIndex)].input;
+          this.historyIndex--;
+        }
+        else{
+          if(!((this.ShellObj.length -1)-this.historyIndex >= 0)){
+            this.historyIndex = this.ShellObj.length-1;
+          }
+          else{
+            this.historyIndex = 0;
+          }
         }
       }
 

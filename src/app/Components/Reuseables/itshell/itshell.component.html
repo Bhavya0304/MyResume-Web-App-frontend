@@ -17,7 +17,7 @@
         </div>
         <div class="prompt-current" style="display: flex;">
             <span class="prompt-in">{{ this.shell.prompt }}</span>
-            <input type="text" autocomplete="off" class="stdin" id="stdin" (keydown.enter)="this.shell.CommandHandler()" (keydown.arrowup)="this.shell.History()"  [(ngModel)]="this.shell.stdin">
+            <input type="text" autocomplete="off" class="stdin" id="stdin" (keydown.enter)="this.shell.CommandHandler()" (keydown.arrowup)="this.shell.HistoryUp()" (keydown.arrowdown)="this.shell.HistoryDown()"  [(ngModel)]="this.shell.stdin">
         </div>
     </div>
   </div>

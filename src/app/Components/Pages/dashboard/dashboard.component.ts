@@ -25,14 +25,17 @@ export class DashboardComponent implements OnInit {
       {
           label:'Tags',
           icon:'pi pi-fw pi-pencil',
+          routerLink:'/dashboard/usertags'
       },
       {
           label:'Skill Tags',
           icon:'pi pi-fw pi-user',
+          routerLink:'/dashboard/skilltags'
       },
       {
           label:'Social Icons',
           icon:'pi pi-fw pi-calendar',
+          routerLink:'/dashboard/socialbuttons'
       },
       {
         label:"Extras",
@@ -41,22 +44,31 @@ export class DashboardComponent implements OnInit {
           {
             label:'Education',
             icon:'pi pi-fw pi-calendar',
+          routerLink:'/dashboard/usereducations'
         },
         {
           label:'Experience',
           icon:'pi pi-fw pi-calendar',
+          routerLink:'/dashboard/userexperience'
       },
       {
         label:'Timeline',
         icon:'pi pi-fw pi-calendar',
+        routerLink:'/dashboard/usertimeline'
     },
         ]
       },
      
       {
-          label:'Quit',
-          icon:'pi pi-fw pi-power-off'
-      }
+          label:'Image Box',
+          icon:'pi pi-fw pi-image',
+          routerLink:'/dashboard/handlefiles'
+      },
+      {
+        label:'Quit',
+        icon:'pi pi-fw pi-power-off',
+        routerLink:'/terminal'
+    }
   ];
     if(this.jwt.isLogged){
         

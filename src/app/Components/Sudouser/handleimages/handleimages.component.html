@@ -1,0 +1,5 @@
+<div class="main_div">
+    <button pButton pRipple (click)="displayMaximizable=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
+</div>
+
+<app-imagebox [displayMaximizable]="displayMaximizable" (Evente)="displayMaximizable=$event"></app-imagebox>
