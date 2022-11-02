@@ -12,7 +12,9 @@ export class DashboardComponent implements OnInit {
   items!: MenuItem[];
 
 
-  constructor(private jwt:JWTService,private router : Router) { }
+  constructor(private jwt:JWTService,private router : Router) { 
+   
+  }
 
   ngOnInit(): void {
     this.items = [
@@ -70,12 +72,14 @@ export class DashboardComponent implements OnInit {
         routerLink:'/terminal'
     }
   ];
-    if(this.jwt.isLogged){
-        
-    }
-    else{
+
+  this.jwt.verifyUser().then((res)=>{
+    if(!res){
+      this.jwt.logout();
       this.router.navigate(['/%%no-user%%']);
     }
+  })
+
   }
 
 }

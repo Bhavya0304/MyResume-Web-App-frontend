@@ -80,6 +80,8 @@ export class ImageboxComponent implements OnInit {
       this.getImages();
       fileUpload.clear()
     }).catch((err)=>{
+      this.messageService.add({severity:'error', summary:'Upload! failed', detail:err});
+      fileUpload.clear()
       console.log(err);
     })
     // this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});

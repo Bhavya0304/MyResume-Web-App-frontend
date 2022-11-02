@@ -42,6 +42,7 @@ export class TerminalComponent implements OnInit {
     };
     this.shell.prompt = "linux@root>"
     this.shell.initShell((command:string)=>{
+      command = command.toLowerCase();
       if(command == "hello"){
         return "Hello World!"
       }
@@ -54,13 +55,29 @@ export class TerminalComponent implements OnInit {
         return"";
       }
       else if(command == "login"){
-        if(this.jwt.isLogged){
+        if(this.jwt.verifyUserBasic()){
           return "<h6 style='color:red;'>Already Logged In!</h6>";
         }
-        this.displayModal = true;
+        else{
+          this.displayModal = true;
         return true;
+        }
+        
       }
-      return "";
+      else if(command == "logout"){
+        this.jwt.logout();
+        return "Logged out successfully!";
+      }
+      else if(command == ""){
+        return "";
+      }
+      else if(command == "registe"){
+        return "Will soon be available!"
+      }
+      else if(command == "help"){
+        return `<h6><b>Welcome User, Here are some commands for you.</b></h6><br>&nbsp;&nbsp; 'hello' -  Command to print Hello world<br><br>&nbsp;&nbsp; 'login' -  Command to login in your account!<br><br>&nbsp;&nbsp; 'logout' -  Command to logout from your account!<br><br>&nbsp;&nbsp; 'dashboard' -  Command to enter in your account!<br><br>&nbsp;&nbsp; 'clear' -  Command to clear terminal!<br><br>`;
+      }
+      return "Command not found! (Type `help` if you need help with available commands!)";
   })
 
    

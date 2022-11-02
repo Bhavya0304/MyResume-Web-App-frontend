@@ -42,6 +42,7 @@
     padding: 10px;
     background-color: black;
     color: white;
+    overflow: auto;
   }
   
 .stdin{

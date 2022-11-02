@@ -1,23 +1,27 @@
-
-
-::ng-deep .p-dialog-header,::ng-deep .p-dialog-content,::ng-deep .p-dialog-footer {
+/* 
+.hello div div div{
+  background-color: #09152d !important;
+  color: white !important;
+  font-weight: 700 !important;
+} */
+.hello ::ng-deep .p-dialog-header,.hello ::ng-deep .p-dialog-content,.hello::ng-deep .p-dialog-footer {
   background-color: #09152d !important;
   color: white !important;
   font-weight: 700 !important;
 }
-::ng-deep .p-dialog-content{
+.hello ::ng-deep .p-dialog-content{
   text-align: center;
 }
-::ng-deep .p-dialog-content .p-inputtext{
+.hello ::ng-deep .p-dialog-content .p-inputtext{
   background-color: #09152d;
   border: 1px solid white;
   color: white;
   width: 80%;
 } 
-::ng-deep .p-dialog-content .p-component{
+.hello ::ng-deep .p-dialog-content .p-component{
   margin: 15px;
 }
-::ng-deep  .p-button{
+.hello ::ng-deep  .p-button{
   background-color: transparent;
 }
 

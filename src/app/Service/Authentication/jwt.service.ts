@@ -16,10 +16,40 @@ export class JWTService {
     this.isLogged = false;
    }
 
-   verifyUser = ()=>{
-    // if(this.isLogged){
-    //   var token = this.StorageClass.getValue("Token");
-    // }
+   verifyUserBasic = ():boolean=>{
+    if(this.getToken() == "" || this.getToken() == undefined){
+      return false;
+    }
+    else{
+      return true;
+    }
+   }
+
+   verifyUser = ():Promise<boolean>=>{
+    console.log("here1");
+    if(this.isLogged){
+      return new Promise((resolve,reject)=>{
+        resolve(true);
+      });
+    }
+    else{
+      return new Promise((resolve,reject)=>{
+        var token = this.getToken();
+        if(token == "" || token == undefined){
+          resolve(false);
+        }
+        else{
+          this.http.verifyUser(token).subscribe((data)=>{
+            if(data.Status == 200){
+              resolve(true);
+            }
+            else{
+              resolve(false);
+            }
+          });
+        }
+      })
+    }
    }
 
    loginUser = (username:string,password:string)=>{

@@ -6,7 +6,8 @@ import { offset } from '@popperjs/core';
 import { ScriptService } from 'src/app/Service/Scripts/script.service';
 import {combo} from '../../../Themes/ColorCombinationsBtns';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { iframely } from "@iframely/embed.js";
+// const iframely = require('@iframely/embed.js');
+
 
 @Component({
   selector: 'app-achievements',
@@ -60,19 +61,20 @@ scrollHandler(events:any) {
     this.Offset = 1;
     this.Length = 5;
     this.end = false;
-   
+
   }
 
   ngOnInit(): void {
+
     var user = this.route.snapshot.paramMap.get('id');
     this.http.getUserTimeline(user,{
       offset:this.Offset,
       length:this.Length
     }).subscribe((Response)=>{
       if(Response.Status == 200){
+        this.scriptService.load('Embed');
         console.log(Response);
         this.event = Response.Data.Data; 
-        this.scriptService.load('Embed');
         // this.event[0].Html = '<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 50%; padding-top: 120px;"><a href="https://github.com/firefox-devtools/profiler/pull/4099" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Ffirefox-devtools%2Fprofiler%2Fpull%2F4099&key=e0152cab56f199cb9055033f5942649e"></a></div></div>';
       }
       else{
