@@ -1,15 +1,17 @@
 <div class="main_div">
-    <div class="contanier m-5">
-        <div class="row">
-            <div class="col-md-4 m-4">
-                <input type="text" pInputText style="width:'50%'"/>
-            </div>
-            <div class="col-md-4 m-4">
-                <input type="text" pInputText style="width:'50%'"/>
-            </div>
-            <div class="col-md-12 m-4">
-                <input type="text" pInputText style="width:'80%'"/>
-            </div>
-        </div>
+    <form [formGroup]="userInfo">
+        <input formControlName="Name" placeholder="Name">
+        <img [src]="this.userInfo.get('ProfilePic')!.value ?? '' ">
+        <input formControlName="ProfilePic" placeholder="Name">
+    </form>
+    <!-- <div class="main_div">
+        <button pButton pRipple (click)="displayMaximizable1=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
+        <button pButton pRipple (click)="displayMaximizable2=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
     </div>
+    
+    <app-selectimagebox [displayMaximizable]="displayMaximizable1" [Multiple]="false" (onSelection)="imgSelected1($event)" (Close)="displayMaximizable1=$event"></app-selectimagebox>
+    <app-selectimagebox [displayMaximizable]="displayMaximizable2" [Multiple]="true" (onSelection)="imgSelected2($event)" (Close)="displayMaximizable2=$event"></app-selectimagebox>
+    {{selectedImage}} -->
+
+
 </div>

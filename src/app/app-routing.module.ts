@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
   { path: 'dashboard', component: DashboardComponent,children:[
     {
-      path:'userinfo',component:CommingSoonComponent
+      path:'userinfo',component:UserInfoComponent
     },
     {
       path:'handlefiles',component:HandleimagesComponent

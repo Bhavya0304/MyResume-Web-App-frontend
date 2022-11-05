@@ -11,7 +11,7 @@ import {ToastModule} from 'primeng/toast';
 
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ImageModule} from 'primeng/image';
@@ -45,6 +45,7 @@ import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.com
 import { HandleimagesComponent } from './Components/Sudouser/handleimages/handleimages.component';
 import { ImageboxComponent } from './Components/Reuseables/imagebox/imagebox.component';
 import { CommingSoonComponent } from './Components/Reuseables/comming-soon/comming-soon.component';
+import { SelectimageboxComponent } from './Components/Reuseables/selectimagebox/selectimagebox.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { CommingSoonComponent } from './Components/Reuseables/comming-soon/commi
     UserInfoComponent,
     HandleimagesComponent,
     ImageboxComponent,
-    CommingSoonComponent
+    CommingSoonComponent,
+    SelectimageboxComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +94,8 @@ import { CommingSoonComponent } from './Components/Reuseables/comming-soon/commi
     MenubarModule,
     TabViewModule,
     FileUploadModule,
-    ToastModule
+    ToastModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

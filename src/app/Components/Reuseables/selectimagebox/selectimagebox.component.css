@@ -1,0 +1,22 @@
+.all_files{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.img_files{
+    height: 100px;
+    width: 100px;
+    margin:30px;
+    padding: 10px;
+}
+
+.selected{
+    border: 2px solid slateblue;
+}
+.btn-footer{
+    margin-top: 10px !important;
+}
+

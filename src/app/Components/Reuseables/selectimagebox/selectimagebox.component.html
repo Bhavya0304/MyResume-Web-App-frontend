@@ -1,0 +1,14 @@
+<p-dialog header="Image Box" [(visible)]="displayMaximizable" [modal]="true" [style]="{width: '80vw'}"
+    [draggable]="false" [resizable]="false" [closable]="false">
+        
+           <div class="all_files">
+               <img [src]="imgs.url" class="img_files" [alt]="imgs.name" (click)="selectThis(imgs)" *ngFor="let imgs of files" [ngClass]="imgs.isSelected ? 'selected':''">
+           </div>
+           
+       
+       
+    <ng-template pTemplate="footer">
+        <button pButton pRipple type="button" label="Select" *ngIf="isSelectedCheck()" class="p-button-raised btn-footer p-button-outlined p-button-rounded p-button-danger p-button-text button_del" (click)="selectFile()"></button>
+        <p-button icon="pi pi-cross" (click)="onClose()" label="Close" styleClass="p-button-text btn-footer"></p-button>
+    </ng-template>
+</p-dialog>
