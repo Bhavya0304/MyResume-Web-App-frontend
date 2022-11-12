@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SpinnnerComponent implements OnInit {
   @Input() isloaded:boolean;
-  loaded:boolean = true;
   constructor() {
     this.isloaded = false;
    }

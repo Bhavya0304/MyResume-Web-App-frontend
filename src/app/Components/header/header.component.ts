@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
     this.http.getUserInfo(user).subscribe((Response)=>{
-      this.isloaded = true;
+    
       console.log(user);
       if(user != null && Response.Status == 404){
         this.router.navigate(['/%%no-user%%'])
@@ -39,6 +39,7 @@ export class HeaderComponent implements OnInit {
       else{
         console.log(Response);
       }
+      this.isloaded = true;
     })
 
 
