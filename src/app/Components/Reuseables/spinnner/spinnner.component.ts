@@ -6,9 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./spinnner.component.css']
 })
 export class SpinnnerComponent implements OnInit {
-  @Input() isloaded:boolean;
+  // @Input() isloaded:boolean;
   constructor() {
-    this.isloaded = false;
+    // this.isloaded = false;
    }
 
   ngOnInit(): void {

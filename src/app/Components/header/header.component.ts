@@ -20,9 +20,6 @@ export class HeaderComponent implements OnInit {
   constructor(config: NgbCarouselConfig,private http:HttpService,private route : ActivatedRoute, private router : Router) {
 
     this.showImg = false;
-  }
-
-  ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
     this.http.getUserInfo(user).subscribe((Response)=>{
     
@@ -41,8 +38,10 @@ export class HeaderComponent implements OnInit {
       }
       this.isloaded = true;
     })
+  }
 
-
+  ngOnInit(): void {
+    
   }
 
 }
