@@ -13,72 +13,81 @@ export class HttpService {
     this.host = environment.API_URI;
     this.server = environment.ADMIN_URI;
    }
-   getUserInfo = (user:String|null)=>{
+   getUserInfo = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getuserinfo');
+      return this.http.get<Response>(this.host+'getuserinfo',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getuserinfo/'+user);
+      return this.http.get<Response>(this.host+'getuserinfo/'+user,{headers:{ Authorization:token ?? ""}});
     }
     
   }
-  getUserEducation = (user:String|null)=>{
+  getUserEducation = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getusereducation');
+      return this.http.get<Response>(this.host+'getusereducation',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getusereducation/'+user);
+      return this.http.get<Response>(this.host+'getusereducation/'+user,{headers:{ Authorization:token ?? ""}});
     }
   }
-  getUserExperience = (user:String|null)=>{
+  getUserExperience = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getuserexperience');
+      return this.http.get<Response>(this.host+'getuserexperience',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getuserexperience/'+user);
+      return this.http.get<Response>(this.host+'getuserexperience/'+user,{headers:{ Authorization:token ?? ""}});
     }
     
   }
-  getUserInfoTag = (user:String|null)=>{
+  getUserInfoTag = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getuserinfotag');
+      return this.http.get<Response>(this.host+'getuserinfotag',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getuserinfotag/'+user);
+      return this.http.get<Response>(this.host+'getuserinfotag/'+user,{headers:{ Authorization:token ?? ""}});
     }
   }
-  getUserSkillTag = (user:String|null)=>{
+  getUserSkillTag = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getuserskilltag');
+      return this.http.get<Response>(this.host+'getuserskilltag',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getuserskilltag/'+user);
+      return this.http.get<Response>(this.host+'getuserskilltag/'+user,{headers:{ Authorization:token ?? ""}});
     }
   }
-  getUserSocialButton = (user:String|null)=>{
+  getUserSocialButton = (user:String|null,token?:string)=>{
     if(!user || user == ""){
-      return this.http.get<Response>(this.host+'getsocialbutton');
+      return this.http.get<Response>(this.host+'getsocialbutton',{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.get<Response>(this.host+'getsocialbutton/'+user);
+      return this.http.get<Response>(this.host+'getsocialbutton/'+user,{headers:{ Authorization:token ?? ""}});
     }
   }
-  getUserTimeline = (user:String|null,data:any)=>{
+  getUserTimeline = (user:String|null,data:any,token?:string)=>{
     if(!user || user == ""){
-      return this.http.post<Response>(this.host+'getusertimeline',data);
+      return this.http.post<Response>(this.host+'getusertimeline',data,{headers:{ Authorization:token ?? ""}});
     }
     else{
-      return this.http.post<Response>(this.host+'getusertimeline/'+user,data);
+      return this.http.post<Response>(this.host+'getusertimeline/'+user,data,{headers:{ Authorization:token ?? ""}});
     }
   }
   verifyUser = (Token:string)=>{
-      return this.http.get<Response>(this.server+'verifyuser',{headers:{ Authorization:Token}});
+      return this.http.get<Response|any>(this.server+'verifyuser',{headers:{ Authorization:Token}});
   }
+
+  editUserInfo = (Token:string,data:any)=>{
+    console.log(Token);
+    return this.http.post<Response>(this.server+'userinfoedit',{Data:data},{headers:{ Authorization:Token}});
+  }
+
   getfiles = (Token:string)=>{
     return this.http.get<Response>(this.server+'getallfiles',{headers:{ Authorization:Token}});
   }
   uploadfiles = (Token:string,files:any)=>{
     return this.http.post<Response>(this.server+'uploadfiles',files,{headers:{ Authorization:Token,Accept:"multipart/form-data"}});
+  }
+  uploadResume = (Token:string,files:any)=>{
+    return this.http.post<Response>(this.server+'uploadresume',files,{headers:{ Authorization:Token,Accept:"multipart/form-data"}});
   }
   deletefiles = (Token:string,files:any[])=>{
     return this.http.post<Response>(this.server+'deletefiles',{files:files},{headers:{ Authorization:Token}});

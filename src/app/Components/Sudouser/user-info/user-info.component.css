@@ -1,0 +1,42 @@
+.main_div{
+    margin-top:50px ;
+}
+.form-control{
+    width:auto;
+}
+
+.form-input{
+    /* width: 30rem; */
+    /* margin: auto; */
+}
+.w-100{
+    width: 100%;
+}
+
+.w-80{
+    width: 68%;
+}
+
+.w-20{
+    width: 30%;
+    margin-left: 5px;
+}
+
+.label{
+    font-weight: 550;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.row{
+    margin-bottom: 20px !important;
+}
+.submit-btn{
+    float: right;
+    margin: 5px 30px 20px 0px;
+}
+
+.thumb_img{
+    height: 30px;
+    width: 30px;
+    margin: 5px 0px 5px 5px;
+}

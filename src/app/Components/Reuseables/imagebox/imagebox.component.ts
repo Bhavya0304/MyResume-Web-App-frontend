@@ -78,7 +78,7 @@ export class ImageboxComponent implements OnInit {
     this.imghandler.uploadImages(formData).then((data:any)=>{
       this.messageService.add({severity:'success', summary:'Uploaded Sucessfully', detail:'All Selected Images are uploaded!'});
       this.getImages();
-      fileUpload.clear()
+      fileUpload.clear();
     }).catch((err)=>{
       this.messageService.add({severity:'error', summary:'Upload! failed', detail:err});
       fileUpload.clear()

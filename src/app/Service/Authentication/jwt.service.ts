@@ -39,14 +39,17 @@ export class JWTService {
           resolve(false);
         }
         else{
-          this.http.verifyUser(token).subscribe((data)=>{
+          this.http.verifyUser(token).subscribe({next:(data)=>{
             if(data.Status == 200){
               resolve(true);
             }
             else{
               resolve(false);
             }
-          });
+          },
+          error:(e)=>{
+            resolve(false);
+          }});
         }
       })
     }

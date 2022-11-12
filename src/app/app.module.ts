@@ -23,6 +23,8 @@ import { CardModule } from "primeng/card";
 import {MenubarModule} from 'primeng/menubar';
 import {TabViewModule} from 'primeng/tabview';
 import {FileUploadModule} from 'primeng/fileupload';
+import {CalendarModule} from 'primeng/calendar';
+import { NgxSummernoteModule } from 'ngx-summernote';
 
 import { HeaderComponent } from './Components/header/header.component';
 import { BodyComponent } from './Components/body/body.component';
@@ -46,6 +48,10 @@ import { HandleimagesComponent } from './Components/Sudouser/handleimages/handle
 import { ImageboxComponent } from './Components/Reuseables/imagebox/imagebox.component';
 import { CommingSoonComponent } from './Components/Reuseables/comming-soon/comming-soon.component';
 import { SelectimageboxComponent } from './Components/Reuseables/selectimagebox/selectimagebox.component';
+import { UserTagsComponent } from './Components/Sudouser/user-tags/user-tags.component';
+import { UploadResumeComponent } from './Components/Sudouser/upload-resume/upload-resume.component';
+import { UserTagsBlockComponent } from './Components/Reuseables/user-tags-block/user-tags-block.component';
+import { SpinnnerComponent } from './Components/Reuseables/spinnner/spinnner.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +77,11 @@ import { SelectimageboxComponent } from './Components/Reuseables/selectimagebox/
     HandleimagesComponent,
     ImageboxComponent,
     CommingSoonComponent,
-    SelectimageboxComponent
+    SelectimageboxComponent,
+    UserTagsComponent,
+    UploadResumeComponent,
+    UserTagsBlockComponent,
+    SpinnnerComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +105,9 @@ import { SelectimageboxComponent } from './Components/Reuseables/selectimagebox/
     TabViewModule,
     FileUploadModule,
     ToastModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule,
+    NgxSummernoteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -40,6 +40,11 @@ export class DashboardComponent implements OnInit {
           routerLink:'/dashboard/socialbuttons'
       },
       {
+        label:'Upload Resume',
+        icon:'pi pi-fw pi-calendar',
+        routerLink:'/dashboard/uploadresume'
+      },
+      {
         label:"Extras",
         icon:'pi pi-fw pi-calendar',
         items:[

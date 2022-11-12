@@ -8,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
   
-  isloaded:boolean;
+ 
 
   constructor() {
-    this.isloaded = false;
+    
   }
 
   ngOnInit(): void {
-    this.isloaded = true;
+   
   }
 
 }

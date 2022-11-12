@@ -1,0 +1,8 @@
+<div class="main_div">
+    <h5>Your Resume is most important document of your profession! Atleast people should be able to reach it from this site Right?</h5>
+    <div class="flex">
+        <p-fileUpload #fileUpload (onSelect)="showCancel = true" [customUpload]="true" (uploadHandler)="myUploader($event,fileUpload)" mode="basic" [maxFileSize]="10000000" [chooseLabel]="'Right here'" class="m-2" name="files[]"></p-fileUpload>
+        <button pButton class="p-button-warning m-2" (click)="CancelUpload(fileUpload)" *ngIf="showCancel">Cancel</button>
+    </div>
+</div>
+<p-toast></p-toast>

@@ -6,7 +6,9 @@ import { DashboardComponent } from './Components/Pages/dashboard/dashboard.compo
 import { NoUserComponent } from './Components/Pages/no-user/no-user.component'
 import { UserInfoComponent } from './Components/Sudouser/user-info/user-info.component';
 import { HandleimagesComponent } from './Components/Sudouser/handleimages/handleimages.component';
-import { CommingSoonComponent  } from './Components/Reuseables/comming-soon/comming-soon.component'
+import { CommingSoonComponent  } from './Components/Reuseables/comming-soon/comming-soon.component';
+import { UserTagsComponent } from './Components/Sudouser/user-tags/user-tags.component';
+import { UploadResumeComponent } from './Components/Sudouser/upload-resume/upload-resume.component';
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
@@ -18,7 +20,10 @@ const routes: Routes = [
       path:'handlefiles',component:HandleimagesComponent
     },
     {
-      path:'usertags',component:CommingSoonComponent
+      path:'usertags',component:UserTagsComponent
+    },
+    {
+      path:'uploadresume',component:UploadResumeComponent
     },
     {
       path:'skilltags',component:CommingSoonComponent

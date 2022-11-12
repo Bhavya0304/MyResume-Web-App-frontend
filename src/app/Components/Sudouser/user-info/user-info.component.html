@@ -1,17 +1,58 @@
-<div class="main_div">
-    <form [formGroup]="userInfo">
-        <input formControlName="Name" placeholder="Name">
-        <img [src]="this.userInfo.get('ProfilePic')!.value ?? '' ">
-        <input formControlName="ProfilePic" placeholder="Name">
+<form [formGroup]="userInfo" (ngSubmit)="onSubmit()" class="main_div container">
+<!-- <div class=""> -->
+    <div class="row grid m-auto">
+        <div class="col-4 form-input">
+
+            <label class="label">Name</label>
+            <input formControlName="Name" class="w-100" pInputText  placeholder="Name">
+        </div>
+        <div class="col-4 form-input">
+
+            <label class="label">Location</label>
+            <input formControlName="Location" class="w-100" pInputText  placeholder="Location">
+        </div>
+        <div class="col-4 form-input">
+
+            <label class="label">Date of Birth</label>
+            <!-- <p-calendar formControlName="DOB" dateFormat="dd/mm/yyyy" inputId="dateformat"></p-calendar> -->
+            <input type="date" formControlName="DOB"   class="w-100 p-inputtext" placeholder="Location">
+        </div>
+       
+    </div>
+    <div class="row grid m-auto">
+        <div class="col-6 form-input">
+
+            <label class="label">Profile Picture</label>
+            <input formControlName="ProfilePic" class="w-80" pInputText  placeholder="Profile Picture">
+            <button pButton pRipple (click)="displayMaximizableProfilePic=true" type="button" label="Select Image" class="p-button-raised p-button-success p-button-text w-20"></button>
+            <img [src]="this.profilePic.url" class="thumb_img">
+        </div>
+        <div class="col-6 form-input">
+            
+            <label class="label">Profile Covers</label>
+            <input formControlName="ProfileCovers" class="w-80" pInputText  placeholder="Profile Covers">
+            <button pButton pRipple (click)="displayMaximizableProfileCover=true" type="button" label="Select Images" class="p-button-raised p-button-success p-button-text w-20"></button>
+            <img [src]="img.url" *ngFor="let img of this.profileCovers" class="thumb_img">
+        </div>
+        
+    </div>
+
+    <div class="row grid m-auto">
+        <div class="col-12 form-input">
+            
+            <label class="label">About Section</label>
+            <input [ngxSummernote]="config" formControlName="About" class="w-100"  placeholder="Profile Covers">
+        </div>
+    </div>
+    <button type="submit" pButton class="submit-btn">Update</button>
     </form>
-    <!-- <div class="main_div">
-        <button pButton pRipple (click)="displayMaximizable1=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
+        <!-- <div class="main_div">
         <button pButton pRipple (click)="displayMaximizable2=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
     </div>
     
-    <app-selectimagebox [displayMaximizable]="displayMaximizable1" [Multiple]="false" (onSelection)="imgSelected1($event)" (Close)="displayMaximizable1=$event"></app-selectimagebox>
-    <app-selectimagebox [displayMaximizable]="displayMaximizable2" [Multiple]="true" (onSelection)="imgSelected2($event)" (Close)="displayMaximizable2=$event"></app-selectimagebox>
     {{selectedImage}} -->
-
-
-</div>
+    
+    
+    
+    <app-selectimagebox [displayMaximizable]="displayMaximizableProfilePic" (onSelection)="imgSelectedProfilePic($event)" (Close)="displayMaximizableProfilePic=$event"></app-selectimagebox>
+    <app-selectimagebox [displayMaximizable]="displayMaximizableProfileCover" [Multiple]="true" (onSelection)="imgSelectedProfileCover($event)" (Close)="displayMaximizableProfileCover=$event"></app-selectimagebox>

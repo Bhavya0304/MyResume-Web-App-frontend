@@ -11,16 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   showNavigationArrows = true;
+  isloaded:boolean = false;
   showNavigationIndicators = true;
   user:String = "";
   showImg:any;
     info:any;
-  // images = info.ProfileCovers;
-  // profilePic = info.ProfilePic;
   verified = "/assets/Images/Icons/verify.png";
-  // DOB = info.DOB;
-  // place = info.Location;
-  // about= info.About;
   constructor(config: NgbCarouselConfig,private http:HttpService,private route : ActivatedRoute, private router : Router) {
 
     this.showImg = false;
@@ -29,6 +25,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
     this.http.getUserInfo(user).subscribe((Response)=>{
+      this.isloaded = true;
       console.log(user);
       if(user != null && Response.Status == 404){
         this.router.navigate(['/%%no-user%%'])
