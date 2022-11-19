@@ -1,3 +1,4 @@
+<app-spinnner *ngIf="!isloaded"></app-spinnner>
 <form [formGroup]="userInfo" (ngSubmit)="onSubmit()" class="main_div container">
 <!-- <div class=""> -->
     <div class="row grid m-auto">
@@ -46,13 +47,6 @@
     </div>
     <button type="submit" pButton class="submit-btn">Update</button>
     </form>
-        <!-- <div class="main_div">
-        <button pButton pRipple (click)="displayMaximizable2=true" type="button" label="Open Image box" class="p-button-raised p-button-success p-button-text"></button>
-    </div>
-    
-    {{selectedImage}} -->
-    
-    
-    
+     
     <app-selectimagebox [displayMaximizable]="displayMaximizableProfilePic" (onSelection)="imgSelectedProfilePic($event)" (Close)="displayMaximizableProfilePic=$event"></app-selectimagebox>
     <app-selectimagebox [displayMaximizable]="displayMaximizableProfileCover" [Multiple]="true" (onSelection)="imgSelectedProfileCover($event)" (Close)="displayMaximizableProfileCover=$event"></app-selectimagebox>

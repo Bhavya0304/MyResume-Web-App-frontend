@@ -95,4 +95,14 @@ export class HttpService {
   userLogin = (username:string,password:string)=>{
       return this.http.post<Response>(this.server+'login',{username:username,password:password});
   }
+  addNewUsertag = (data:any,token:string)=>{
+      return this.http.post<Response>(this.server+'userinfotagadd',{data:data},{headers:{ Authorization:token}});
+  }
+
+  editUsertag = (data:any,token:string)=>{
+    return this.http.post<Response>(this.server+'userinfotagedit',{data:data},{headers:{ Authorization:token}});
+  }
+  deleteUsertag = (data:any,token:string)=>{
+      return this.http.post<Response>(this.server+'userinfotagdelete',{data:data},{headers:{ Authorization:token}});
+}
 }

@@ -1,3 +1,5 @@
+<button class="btn btn-outline-success btn_add" (click)="AddNewTag()">Add New Tag</button>
 <div class="main_div">
-<app-user-tags-block></app-user-tags-block>
+    <app-spinnner *ngIf="!isloaded"></app-spinnner>
+    <app-user-tags-block *ngFor="let item of userTags; let i = index" (click)="MakeEditable(item)" (cancelChange)="cancelChange(i)" (TagObjChange)="TagUpdate($event,i)" (TagObjDelete)="Delete(i)"  [TagObj]="userTags[i]" [isEditable]="item.isEditable"></app-user-tags-block>
 </div>

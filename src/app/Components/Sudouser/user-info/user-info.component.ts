@@ -15,6 +15,7 @@ export class UserInfoComponent implements OnInit {
   displayMaximizableProfileCover:boolean;
   profilePic:any;
   profileCovers:any;
+  isloaded:boolean = false;
   userInfo:FormGroup = new FormGroup({
     Name:new FormControl(''),
     ProfilePic:new FormControl(''),
@@ -40,6 +41,7 @@ export class UserInfoComponent implements OnInit {
   getUserData  = ()=>{
     var token = this.jwt.getToken() ?? "";
     this.http.getUserInfo("",token).subscribe((data)=>{
+      this.isloaded = true;
       this.profilePic = this.getFileinfo(data.Data.Data.ProfilePic);
       this.profileCovers = data.Data.Data.ProfileCovers.map((obj:any)=>{
         return this.getFileinfo(obj)

@@ -1,3 +1,10 @@
 <div class="main_div">
-    {{TagObj}}
+    <h5 *ngIf="isEditable">Edit Tag Details</h5>
+    <input class="input_type1" type="text" placeholder="Tag Name" [(ngModel)]="TagObj.Tag_Name" [disabled]="!isEditable">
+    <input class="input_type1" type="text" placeholder="Link" [(ngModel)]="TagObj.Link"  *ngIf="isEditable" [disabled]="!isEditable">
+   <div class="btn_grp">
+       <button class="btn btn-outline-warning btn_type1" *ngIf="isEditable" (click)="UpdateTag($event)">Update</button>
+       <button class="btn btn-outline-info btn_type1" *ngIf="isEditable" (click)="cancel($event)">Cancel</button>
+       <button class="btn btn-outline-danger btn_type1" *ngIf="isEditable" (click)="deleteTag($event)">Delete</button>
+    </div>
 </div>
