@@ -21,7 +21,7 @@
     margin: 10px;
     width: 80%;
 }
-.input_type1:disabled{
+.input_type1:read-only{
     border: none;
     margin: 0;
     text-align: center;
