@@ -9,6 +9,11 @@ import { HandleimagesComponent } from './Components/Sudouser/handleimages/handle
 import { CommingSoonComponent  } from './Components/Reuseables/comming-soon/comming-soon.component';
 import { UserTagsComponent } from './Components/Sudouser/user-tags/user-tags.component';
 import { UploadResumeComponent } from './Components/Sudouser/upload-resume/upload-resume.component';
+import { UserSkillsComponent } from './Components/Sudouser/user-skills/user-skills.component';
+import { UserSocialsBlockComponent } from './Components/Reuseables/user-socials-block/user-socials-block.component';
+import { UserSocialsComponent } from './Components/Sudouser/user-socials/user-socials.component';
+import { UserEducationComponent } from './Components/Sudouser/user-education/user-education.component';
+import { UserExperienceComponent } from './Components/Sudouser/user-experience/user-experience.component';
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
@@ -26,16 +31,16 @@ const routes: Routes = [
       path:'uploadresume',component:UploadResumeComponent
     },
     {
-      path:'skilltags',component:CommingSoonComponent
+      path:'skilltags',component:UserSkillsComponent
     },
     {
-      path:'socialbuttons',component:CommingSoonComponent
+      path:'socialbuttons',component:UserSocialsComponent
     },
     {
-      path:'usereducations',component:CommingSoonComponent
+      path:'usereducations',component:UserEducationComponent
     },
     {
-      path:'userexperience',component:CommingSoonComponent
+      path:'userexperience',component:UserExperienceComponent
     },
     {
       path:'usertimeline',component:CommingSoonComponent

@@ -6,7 +6,7 @@
     <p-accordionTab>
       <ng-template pTemplate="header">  
         <img class="islogo" [src]="event.logo">
-        {{ event.Year_from + ',' + event.Value }}
+        {{ convertToMonthYearFormat(event.Year_from) + ', ' + event.Value }}
       </ng-template>
       <ng-template pTemplate="content">
 

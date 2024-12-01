@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { JWTService } from 'src/app/Service/Authentication/jwt.service';
 import { HttpService } from 'src/app/Service/Network/http.service';
+import { ToastService } from 'src/app/Service/Notifications/toast.service';
 
 @Component({
   selector: 'app-user-tags-block',
@@ -14,7 +15,7 @@ export class UserTagsBlockComponent implements OnInit {
   @Output() TagObjChange = new EventEmitter<any>();
   @Output() TagObjDelete = new EventEmitter<any>();
   @Input() isEditable:any;
-  constructor(private http:HttpService,private jwt:JWTService) { }
+  constructor(private http:HttpService,private jwt:JWTService,private toast:ToastService) { }
 
   ngOnInit(): void {
   }
@@ -60,7 +61,10 @@ export class UserTagsBlockComponent implements OnInit {
               this.TagObj = data.Data;
               this.TagObjChange.emit(this.TagObj);
               console.log(data);
-              alert("success");
+              this.toast.addToast({
+                severity:'success', 
+                summary:'Updated Sucessfully'
+              })
             }
             else{
               alert(data.Error);

@@ -8,6 +8,7 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
 import {ToastModule} from 'primeng/toast';
+import { DragulaModule } from 'ng2-dragula';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import { LifechartsComponent } from './Components/body/lifecharts/lifecharts.com
 import { SkillchartsComponent } from './Components/body/skillcharts/skillcharts.component';
 import { AchievementsComponent } from './Components/body/achievements/achievements.component';
 import { SafeHtmlPipe } from './Pipes/safeHtml/safe-html.pipe';
+import { SortByOrderPipe } from './Pipes/Sorting/sort-by-order.pipe';
 import { HomepageComponent } from './Components/Pages/homepage/homepage.component';
 import { TerminalComponent } from './Components/Pages/terminal/terminal.component';
 import { NoUserComponent } from './Components/Pages/no-user/no-user.component';
@@ -52,6 +54,16 @@ import { UserTagsComponent } from './Components/Sudouser/user-tags/user-tags.com
 import { UploadResumeComponent } from './Components/Sudouser/upload-resume/upload-resume.component';
 import { UserTagsBlockComponent } from './Components/Reuseables/user-tags-block/user-tags-block.component';
 import { SpinnnerComponent } from './Components/Reuseables/spinnner/spinnner.component';
+import { ToastComponent } from './Components/Reuseables/toast/toast.component';
+import { UserSkillsComponent } from './Components/Sudouser/user-skills/user-skills.component';
+import { UserSkillsBlockComponent } from './Components/Reuseables/user-skills-block/user-skills-block.component';
+import { UserSocialsComponent } from './Components/Sudouser/user-socials/user-socials.component';
+import { UserSocialsBlockComponent } from './Components/Reuseables/user-socials-block/user-socials-block.component';
+import { UserEducationComponent } from './Components/Sudouser/user-education/user-education.component';
+import { UserExperienceComponent } from './Components/Sudouser/user-experience/user-experience.component';
+import { UserEducationBlockComponent } from './Components/Reuseables/user-education-block/user-education-block.component';
+import { UserExperienceBlockComponent } from './Components/Reuseables/user-experience-block/user-experience-block.component';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +80,7 @@ import { SpinnnerComponent } from './Components/Reuseables/spinnner/spinnner.com
     SkillchartsComponent,
     AchievementsComponent,
     SafeHtmlPipe,
+    SortByOrderPipe,
     HomepageComponent,
     TerminalComponent,
     NoUserComponent,
@@ -81,7 +94,16 @@ import { SpinnnerComponent } from './Components/Reuseables/spinnner/spinnner.com
     UserTagsComponent,
     UploadResumeComponent,
     UserTagsBlockComponent,
-    SpinnnerComponent
+    SpinnnerComponent,
+    ToastComponent,
+    UserSkillsComponent,
+    UserSkillsBlockComponent,
+    UserSocialsComponent,
+    UserSocialsBlockComponent,
+    UserEducationComponent,
+    UserExperienceComponent,
+    UserEducationBlockComponent,
+    UserExperienceBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,7 +129,8 @@ import { SpinnnerComponent } from './Components/Reuseables/spinnner/spinnner.com
     ToastModule,
     ReactiveFormsModule,
     CalendarModule,
-    NgxSummernoteModule
+    NgxSummernoteModule,
+    DragulaModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
