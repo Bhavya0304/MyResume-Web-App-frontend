@@ -160,4 +160,14 @@ editUserExperienceOrder = (data:any[],token:string)=>{
 deleteUserExperience = (data:any,token:string)=>{
   return this.http.post<Response>(this.server+'userexperiencedelete',{data:data},{headers:{ Authorization:token}});
 }
+addNewUserTimeline = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usertimelineadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserTimeline = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'usertimelineedit',{data:data},{headers:{ Authorization:token}});
+}
+deleteUserTimeline = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usertimelinedelete',{data:data},{headers:{ Authorization:token}});
+}
 }

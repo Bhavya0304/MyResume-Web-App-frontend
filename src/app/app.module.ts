@@ -63,6 +63,10 @@ import { UserEducationComponent } from './Components/Sudouser/user-education/use
 import { UserExperienceComponent } from './Components/Sudouser/user-experience/user-experience.component';
 import { UserEducationBlockComponent } from './Components/Reuseables/user-education-block/user-education-block.component';
 import { UserExperienceBlockComponent } from './Components/Reuseables/user-experience-block/user-experience-block.component';
+import { UserTimelineComponent } from './Components/Sudouser/user-timeline/user-timeline.component';
+import { UserTimelineBlockComponent } from './Components/Reuseables/user-timeline-block/user-timeline-block.component';
+import { ChipsModule } from 'primeng/chips';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 
 @NgModule({
@@ -104,6 +108,8 @@ import { UserExperienceBlockComponent } from './Components/Reuseables/user-exper
     UserExperienceComponent,
     UserEducationBlockComponent,
     UserExperienceBlockComponent,
+    UserTimelineComponent,
+    UserTimelineBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,6 +136,8 @@ import { UserExperienceBlockComponent } from './Components/Reuseables/user-exper
     ReactiveFormsModule,
     CalendarModule,
     NgxSummernoteModule,
+    ChipsModule,
+    ColorPickerModule,
     DragulaModule.forRoot()
   ],
   providers: [],

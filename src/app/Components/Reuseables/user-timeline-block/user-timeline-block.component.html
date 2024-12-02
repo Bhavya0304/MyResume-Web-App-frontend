@@ -1,0 +1,27 @@
+<div class="main_div">
+
+    
+    <h5 *ngIf="isEditable">Edit Timeline Details</h5>
+    <input class="input_type1" type="text" placeholder="Title" [(ngModel)]="TagObj.Text" [readonly]="!isEditable">
+    <input class="input_type1" type="date" placeholder="From" [(ngModel)]="TagObj.Date" *ngIf="isEditable" [readonly]="!isEditable">
+    <input [ngxSummernote]="config" class="w-100"  placeholder="Description" [(ngModel)]="TagObj.Html" *ngIf="isEditable">
+    <input class="input_type1 hidden" type="text" placeholder="Symbol" [(ngModel)]="TagObj.Icon"  [readonly]="!isEditable">
+    <button pButton pRipple (click)="displayMaximizableProfilePic=true" type="button" label="Select Image" class="p-button-raised p-button-success p-button-text w-20"></button>
+    <img [src]="this.profilePic?.url || 'assets/Images/no-image.png'" class="thumb_img">
+    <div style="text-align: left;" *ngIf="isEditable">
+        <h4>Tags</h4>
+
+    <p-chips [(ngModel)]="TagObj.Tags"  (onAdd)="onAddEnv($event)">
+        <ng-template let-item pTemplate="item">
+            {{ item.Tag_Name +"  " }} <p-colorPicker style="height: 20px;" class="colorpick" (onChange)="setColor($event,item)" [(ngModel)]="item.Tag_Color"></p-colorPicker>
+         </ng-template>
+    </p-chips>
+</div>
+
+   <div class="btn_grp">
+       <button class="btn btn-outline-warning btn_type1" *ngIf="isEditable" (click)="UpdateTag($event)">Update</button>
+       <button class="btn btn-outline-info btn_type1" *ngIf="isEditable" (click)="cancel($event)">Cancel</button>
+       <button class="btn btn-outline-danger btn_type1" *ngIf="isEditable" (click)="deleteTag($event)">Delete</button>
+    </div>
+</div>
+<app-selectimagebox [displayMaximizable]="displayMaximizableProfilePic" (onSelection)="imgSelectedProfilePic($event)" (Close)="displayMaximizableProfilePic=$event"></app-selectimagebox>

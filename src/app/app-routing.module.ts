@@ -14,6 +14,7 @@ import { UserSocialsBlockComponent } from './Components/Reuseables/user-socials-
 import { UserSocialsComponent } from './Components/Sudouser/user-socials/user-socials.component';
 import { UserEducationComponent } from './Components/Sudouser/user-education/user-education.component';
 import { UserExperienceComponent } from './Components/Sudouser/user-experience/user-experience.component';
+import { UserTimelineComponent } from './Components/Sudouser/user-timeline/user-timeline.component';
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
@@ -43,7 +44,7 @@ const routes: Routes = [
       path:'userexperience',component:UserExperienceComponent
     },
     {
-      path:'usertimeline',component:CommingSoonComponent
+      path:'usertimeline',component:UserTimelineComponent
     },
   ] },
   { path: '%%no-user%%', component: NoUserComponent },
