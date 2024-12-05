@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-no-user',
   templateUrl: './no-user.component.html',
-  styleUrls: ['./no-user.component.css']
+  styleUrls: ['./no-user.component.css'],
 })
 export class NoUserComponent implements OnInit {
   redirectToTerminal:any;

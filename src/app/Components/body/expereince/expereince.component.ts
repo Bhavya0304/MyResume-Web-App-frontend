@@ -20,19 +20,21 @@ export class ExpereinceComponent implements OnInit {
     this.http.getUserExperience(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.expirence = Response.Data.Data;
-        this.expirence.sort((a,b)=>{
-          if(parseInt(a.Year_from) < parseInt(b.Year_from)){
-            return 1;
-          }
-          else{
-            return -1;
-          }
-        })
+        
       }
       else{
         console.log(Response.Error);
       }
     })
+  }
+
+  convertToMonthYearFormat(dateString: string): string {
+    // Parse the input date string (e.g., "2021-05")
+    const date = new Date(dateString + "-01"); // Add day to ensure valid Date object
+    
+    // Format the date as "Month, YYYY"
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long' };
+    return new Intl.DateTimeFormat('en-US', options).format(date);
   }
 
 }

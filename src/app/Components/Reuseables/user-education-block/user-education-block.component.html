@@ -1,0 +1,20 @@
+<div class="main_div">
+
+    <span class="handle">
+    </span>
+    <h5 *ngIf="isEditable">Edit Education Details</h5>
+    <input class="input_type1" type="text" placeholder="Title" [(ngModel)]="TagObj.Value" [readonly]="!isEditable">
+    <input class="input_type1" type="text" placeholder="Education Type" [(ngModel)]="TagObj.Type" [readonly]="!isEditable">
+    <input class="input_type1" type="month" placeholder="From" [(ngModel)]="TagObj.Year_from" *ngIf="isEditable" [readonly]="!isEditable">
+    <input class="input_type1" type="month" placeholder="To" [(ngModel)]="TagObj.Year_to" *ngIf="isEditable" [readonly]="!isEditable">
+    <input [ngxSummernote]="config" class="w-100"  placeholder="Description" [(ngModel)]="TagObj.About" *ngIf="isEditable">
+    <input class="input_type1 hidden" type="text" placeholder="Symbol" [(ngModel)]="TagObj.logo"  [readonly]="!isEditable">
+    <button pButton pRipple (click)="displayMaximizableProfilePic=true" type="button" label="Select Image" class="p-button-raised p-button-success p-button-text w-20"></button>
+    <img [src]="this.profilePic?.url || 'assets/Images/no-image.png'" class="thumb_img">
+   <div class="btn_grp">
+       <button class="btn btn-outline-warning btn_type1" *ngIf="isEditable" (click)="UpdateTag($event)">Update</button>
+       <button class="btn btn-outline-info btn_type1" *ngIf="isEditable" (click)="cancel($event)">Cancel</button>
+       <button class="btn btn-outline-danger btn_type1" *ngIf="isEditable" (click)="deleteTag($event)">Delete</button>
+    </div>
+</div>
+<app-selectimagebox [displayMaximizable]="displayMaximizableProfilePic" (onSelection)="imgSelectedProfilePic($event)" (Close)="displayMaximizableProfilePic=$event"></app-selectimagebox>

@@ -1,7 +1,6 @@
 <app-spinnner *ngIf="!isloaded"></app-spinnner>
-<div class="terminal">
-  <a [routerLink]="'/terminal'"><img src="/assets/Images/Icons/terminal.png" class="terminal_icon"></a>
-</div>
+
+
 
 <ngb-carousel  [showNavigationIndicators]="showNavigationIndicators" [showNavigationArrows]="showNavigationArrows">
     <ng-template ngbSlide *ngFor='let image of info.ProfileCovers;'>
@@ -16,6 +15,10 @@
 
   </ngb-carousel>
   <div class="main_block">
+    
+<div class="terminal">
+  <a [routerLink]="'/terminal'"><img src="/assets/Images/Icons/terminalv2.png" class="terminal_icon"></a>
+</div>
       <div class="ProfilePicture">
         <!-- <ngx-skeleton-loader count="1" *ngIf="!showImg" appearance="circle" [class]="'ProfileSkleton'" animation="pulse"></ngx-skeleton-loader> -->
           <p-image [src]="info.ProfilePic" alt="Image" class="ProfilePic" [preview]="true">

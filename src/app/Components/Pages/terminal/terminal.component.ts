@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { TerminalService } from 'primeng/terminal';
 import { JWTService } from 'src/app/Service/Authentication/jwt.service';

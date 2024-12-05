@@ -1,0 +1,12 @@
+.main_div{
+    width: 40%;
+    margin: 20px auto;
+}
+.btn_add{
+    margin: 10px 0px;
+    position: relative;
+    left:65%;
+}
+.btn_add:focus{
+    box-shadow: none;
+}

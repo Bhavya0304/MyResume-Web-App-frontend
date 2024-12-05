@@ -105,4 +105,69 @@ export class HttpService {
   deleteUsertag = (data:any,token:string)=>{
       return this.http.post<Response>(this.server+'userinfotagdelete',{data:data},{headers:{ Authorization:token}});
 }
+addNewUserSkill = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'userskilltagadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserSkill = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'userskilltagedit',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserSkillOrder = (data:any[],token:string)=>{
+  return this.http.post<Response>(this.server+'userskilltagreorder',{data:data},{headers:{ Authorization:token}});
+  }
+
+deleteUserSkill = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'userskilltagdelete',{data:data},{headers:{ Authorization:token}});
+}
+addNewUserSocial = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usersocialbuttonadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserSocial = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'usersocialbuttonedit',{data:data},{headers:{ Authorization:token}});
+}
+deleteUserSocial = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usersocialbuttondelete',{data:data},{headers:{ Authorization:token}});
+}
+addNewUserEducation = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usereducationadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserEducation = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'usereducationedit',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserEducationOrder = (data:any[],token:string)=>{
+  return this.http.post<Response>(this.server+'usereducationreorder',{data:data},{headers:{ Authorization:token}});
+  }
+
+deleteUserEducation = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usereducationdelete',{data:data},{headers:{ Authorization:token}});
+}
+addNewUserExperience = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'userexperienceadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserExperience = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'userexperienceedit',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserExperienceOrder = (data:any[],token:string)=>{
+  return this.http.post<Response>(this.server+'userexperiencereorder',{data:data},{headers:{ Authorization:token}});
+  }
+
+deleteUserExperience = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'userexperiencedelete',{data:data},{headers:{ Authorization:token}});
+}
+addNewUserTimeline = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usertimelineadd',{data:data},{headers:{ Authorization:token}});
+}
+
+editUserTimeline = (data:any,token:string)=>{
+return this.http.post<Response>(this.server+'usertimelineedit',{data:data},{headers:{ Authorization:token}});
+}
+deleteUserTimeline = (data:any,token:string)=>{
+  return this.http.post<Response>(this.server+'usertimelinedelete',{data:data},{headers:{ Authorization:token}});
+}
 }

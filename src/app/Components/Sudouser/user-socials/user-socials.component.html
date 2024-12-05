@@ -1,0 +1,7 @@
+<button class="btn btn-outline-success btn_add" (click)="AddNewTag()">Add New Social Media</button>
+<app-spinnner *ngIf="!isloaded"></app-spinnner>
+
+<div class="main_div">
+    <app-user-socials-block *ngFor="let item of userTags; let i = index" (click)="MakeEditable(item,i)" (cancelChange)="cancelChange(i)" (TagObjChange)="TagUpdate($event,i)" (TagObjDelete)="Delete(i)"  [TagObj]="userTags[i]" [isEditable]="item.isEditable"></app-user-socials-block>
+</div>
+
