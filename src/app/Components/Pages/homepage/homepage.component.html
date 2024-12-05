@@ -1,4 +1,13 @@
-
-<app-header></app-header><hr>
-<app-body></app-body>
-<app-footer></app-footer>
+<div class="bg-dark" [class.bg-dark]="isDarkTheme">
+    <div class="theme-toggle">
+        <button (click)="toggleTheme()" [class.dark]="isDarkTheme" class="toggle-btn">
+          <div class="icon-container">
+            <div class="icon sun" *ngIf="isDarkTheme">☀️</div>
+            <div class="icon moon" *ngIf="!isDarkTheme">🌙</div>
+          </div>
+        </button>
+      </div>
+    <app-header></app-header><hr>
+    <app-body></app-body>
+    <app-footer></app-footer>
+</div>

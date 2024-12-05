@@ -5,3 +5,104 @@ hr{
   background-image:linear-gradient(to bottom right, #0100EC, #FB36F4);
 }
 
+:host{
+  display: block;
+ 
+}
+
+.bg-dark{
+  background-color: #1b1b1b;
+  color: white;
+}
+
+::ng-deep .bg-dark .tag_a {
+  background-color: #e4e8f1;
+  /* background-image: linear-gradient(to bottom right, #0100EC, #FB36F4); */
+  border-radius: 50px;
+  margin: 5px;
+}
+
+::ng-deep .bg-dark .terminal{
+  /* background-color: white; */
+  border:1px solid white !important;
+}
+/* Toggle button container */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+  background: linear-gradient(to right, #4b79a1, #283e51); /* Night mode (moon) colors */
+
+  border: none;
+  border-radius: 50px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  transition: background 0.5s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.toggle-btn.dark {
+  background: linear-gradient(to right, #ffd700, #f9a825); /* Default to light mode (sunny) colors */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Icons inside the toggle */
+.icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.0em;
+  color: white;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.sun {
+  background: #fbc02d; /* Bright sun color */
+  box-shadow: 0 0 10px #fbc02d;
+  order: -1; /* Sun starts on the left in dark mode */
+  left: 0%;
+  position: absolute;
+
+
+}
+
+.moon {
+  background: #37474f; /* Dark moon color */
+  box-shadow: 0 0 10px #37474f;
+  order: 1; /* Moon starts on the right in light mode */
+  right: 0%;
+  transform: translate(-50%, 0);
+  position: absolute;
+
+
+}
+
+/* Animating the toggle button's inner elements */
+.icon-container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}
