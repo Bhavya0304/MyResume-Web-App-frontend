@@ -25,12 +25,32 @@ export class UserSocialsBlockComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.profilePic.url = this.TagObj.Image
+    this.profilePic = this.getFileinfo(this.TagObj.Image)
+    this.TagObj.Image = this.profilePic.name
   }
 
   ngAfterViewInit() {
     this.elementRef.nativeElement.querySelector('img')
                                   .addEventListener('error', this.SetDefaultImg);
+  }
+
+  getFileinfo = (url:string)=>{
+    if(url != "" && url != undefined){
+      var url_splits = url.split('/');
+      var name = url_splits[url_splits.length-1];
+      return {
+        name:name,
+        url:url,
+        isSelected:true
+      }
+    }
+    else{
+      return {
+        name:"",
+        url:"",
+        isSelected:false
+      };
+    }
   }
 
   SetDefaultImg = (event:any)=>{

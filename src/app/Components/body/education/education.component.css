@@ -8,3 +8,11 @@
     margin-bottom: 15px;
 }
 
+::ng-deep .p-accordion-header-link{
+    background-color: transparent !important;
+}
+
+::ng-deep .p-accordion-content{
+    background-color: transparent !important;
+}
+

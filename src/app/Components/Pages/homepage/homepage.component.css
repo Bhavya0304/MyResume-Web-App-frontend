@@ -26,6 +26,21 @@ hr{
   /* background-color: white; */
   border:1px solid white !important;
 }
+::ng-deep .bg-dark .p-accordion-header-link{
+  color: white !important;
+}
+
+::ng-deep .bg-dark .img_any {
+  background-color: #e4e8f1;
+  /* background-image: linear-gradient(to bottom right, #0100EC, #FB36F4); */
+  border-radius: 50px;
+  margin: 5px;
+  padding: 5px;
+}
+
+::ng-deep .bg-dark .p-accordion-content{
+  color: white;
+}
 /* Toggle button container */
 .theme-toggle {
   position: absolute;

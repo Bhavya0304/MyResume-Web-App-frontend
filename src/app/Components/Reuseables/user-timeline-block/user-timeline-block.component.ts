@@ -25,7 +25,8 @@ export class UserTimelineBlockComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.profilePic.url = this.TagObj.Icon
+    this.profilePic = this.getFileinfo(this.TagObj.Icon)
+    this.TagObj.Icon = this.profilePic.name
   }
 
   ngAfterViewInit() {
@@ -37,6 +38,25 @@ export class UserTimelineBlockComponent implements OnInit {
     const target = event.target as HTMLImageElement;
     // Set a default image URL
     target.src = 'assets/Images/no-image.png';
+  }
+
+  getFileinfo = (url:string)=>{
+    if(url != "" && url != undefined){
+      var url_splits = url.split('/');
+      var name = url_splits[url_splits.length-1];
+      return {
+        name:name,
+        url:url,
+        isSelected:true
+      }
+    }
+    else{
+      return {
+        name:"",
+        url:"",
+        isSelected:false
+      };
+    }
   }
 
   onAddEnv = (event:any)=>{
@@ -52,8 +72,6 @@ export class UserTimelineBlockComponent implements OnInit {
 
   setColor = (event:any,value:any)=>{
     var obj:any = this.TagObj.Tags.find((x:any)=>x.Tag_Name == value.Tag_Name);
-    console.log(event)
-    console.log(obj)
   }
 
   imgSelectedProfilePic = (name:any)=>{
