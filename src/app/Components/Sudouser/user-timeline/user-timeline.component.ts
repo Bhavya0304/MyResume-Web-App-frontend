@@ -22,7 +22,7 @@ export class UserTimelineComponent implements OnInit {
 
   getUserSkillTag = ()=>{
     var token = this.jwt.getToken();
-    this.http.getUserTimeline("",token ?? "").subscribe((data)=>{
+    this.http.getUserTimeline("",null,token ?? "").subscribe((data)=>{
       this.isloaded = true;
       if(data.Status == 200){
         this.userTags = data.Data.Data;

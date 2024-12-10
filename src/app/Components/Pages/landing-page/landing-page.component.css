@@ -1,0 +1,314 @@
+/* Global Styles */
+::ng-deep body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(926px at 2.7% 11%, rgb(17, 29, 94) 0%, rgb(178, 31, 102) 90%);
+    color: #ffffff;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  /* Landing Page */
+  .landing-page {
+    width: 100%;
+  }
+  .thumbimg{
+    width: 40px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%; /* Prevents the image from exceeding its container's width */
+    height: auto;    /* Maintains the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    max-height: 400px; /* Sets a maximum height */
+    width: auto; /* Ensures the width scales proportionally */
+    object-fit: contain; /* Ensures the entire image fits within its container */
+    margin: 10px;
+  }
+  
+  
+  .hero-content {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button.primary {
+    background-color: #ff9933;
+    color: #002244;
+  }
+  
+  .cta-button.primary:hover {
+    background-color: #ffcc66;
+  }
+  
+  .cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid #ff9933;
+    color: #ff9933;
+  }
+  
+  .cta-button.secondary:hover {
+    background-color: #ff9933;
+    color: #002244;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .showcase {
+    padding: 50px;
+    text-align: center;
+    background: transparent;
+  }
+  
+  .showcase h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff9933;
+  }
+  
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .showcase-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .showcase-item img {
+    width: 100%;            /* Ensures the image takes the full width of its container */
+    max-width: 300px;       /* Sets a maximum width for uniformity */
+    height: auto;           /* Maintains the aspect ratio */
+    max-height: 200px;      /* Limits the height to prevent oversized images */
+    object-fit: cover;      /* Ensures the image fills its space without distortion */
+    border-radius: 10px;    /* Adds rounded corners for a polished look */
+    margin: 0 auto;         /* Centers the image inside its container */
+    display: block;         /* Ensures proper layout behavior */
+  }
+
+  .showcase {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .showcase h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #ffcc66;
+  }
+  
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .showcase-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .showcase-item:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+  }
+  
+  /* Image Wrapper */
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .image-wrapper:hover img {
+    transform: scale(1.2); /* Zoom in on hover */
+  }
+  
+  /* Showcase Text */
+  .showcase-item p {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  /* Full Image on Hover (Optional Overlay Effect) */
+  .image-wrapper:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Optional overlay effect */
+    z-index: 1;
+  }
+  
+  .image-wrapper img:hover {
+    z-index: 2; /* Ensure the image is above the overlay */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .showcase-grid {
+      grid-template-columns: 1fr; /* Stack items in a single column */
+    }
+  
+    .image-wrapper {
+      max-width: 100%;
+      height: 150px; /* Reduce height on smaller screens */
+    }
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .feature-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-item .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item h3 {
+    margin-bottom: 10px;
+    color: #ffcc66;
+  }
+  
+  /* Call-to-Action Banner */
+  .cta-banner {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .cta-banner h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button.large {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    background-color: #ff9933;
+    color: #002244;
+  }
+  
+  .cta-button.large:hover {
+    background-color: #ffcc66;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  footer nav a {
+    color: #ff9933;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  footer nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+    }
+  
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

@@ -67,6 +67,7 @@ import { UserTimelineComponent } from './Components/Sudouser/user-timeline/user-
 import { UserTimelineBlockComponent } from './Components/Reuseables/user-timeline-block/user-timeline-block.component';
 import { ChipsModule } from 'primeng/chips';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { LandingPageComponent } from './Components/Pages/landing-page/landing-page.component';
 
 
 @NgModule({
@@ -110,6 +111,7 @@ import { ColorPickerModule } from 'primeng/colorpicker';
     UserExperienceBlockComponent,
     UserTimelineComponent,
     UserTimelineBlockComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
