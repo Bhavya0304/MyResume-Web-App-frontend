@@ -16,6 +16,7 @@ import { UserEducationComponent } from './Components/Sudouser/user-education/use
 import { UserExperienceComponent } from './Components/Sudouser/user-experience/user-experience.component';
 import { UserTimelineComponent } from './Components/Sudouser/user-timeline/user-timeline.component';
 import { LandingPageComponent } from './Components/Pages/landing-page/landing-page.component';
+import { InactiveUserComponent } from './Components/Pages/inactive-user/inactive-user.component';
 
 const routes: Routes = [
   { path: 'terminal', component: TerminalComponent },
@@ -49,6 +50,7 @@ const routes: Routes = [
     },
   ] },
   { path: '%%no-user%%', component: NoUserComponent },
+  { path: '%%inactive-user%%', component: InactiveUserComponent },
   { path: ':id', component: HomepageComponent },
   { path: '', component: LandingPageComponent }
 ];

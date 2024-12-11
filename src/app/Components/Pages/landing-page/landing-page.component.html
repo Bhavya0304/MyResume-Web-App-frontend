@@ -5,7 +5,7 @@
         <h1>Discover Your Professional Identity</h1>
         <p>Your personal profile, beautifully crafted. Showcase your achievements, skills, and experiences with ease.</p>
         <div class="cta-buttons">
-          <button class="cta-button primary">Get Started</button>
+          <button class="cta-button primary" (click)="this.showSignupPopup()">Get Started</button>
           <a class="cta-button secondary" href="/bhavya0304">Take A Look</a>
         </div>
       </div>
@@ -77,7 +77,7 @@
     <!-- Call to Action -->
     <section class="cta-banner">
       <h2>Take the First Step in Building Your Personal Brand</h2>
-      <button class="cta-button large">Start Your Free Account</button>
+      <button class="cta-button large" (click)="this.showSignupPopup()">Start Your Free Account</button>
     </section>
   
     <!-- Footer -->
@@ -91,5 +91,40 @@
         </nav>
       </div>
     </footer>
+  </div>
+  <div class="popup-form" *ngIf="isVisible">
+    <div class="popup-content">
+      <span class="close-button" (click)="closePopup()">&times;</span>
+      <h2>Sign Up</h2>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" type="text" placeholder="Enter your username" />
+        <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error">
+          Username is required.
+        </div>
+  
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+          Enter a valid email address.
+        </div>
+  
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" placeholder="Enter your password" />
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+          Password must be at least 6 characters.
+        </div>
+  
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirm your password" />
+        <div *ngIf="signupForm.hasError('passwordMismatch') && signupForm.get('confirmPassword')?.touched" class="error">
+          Passwords do not match.
+        </div>
+  
+        <button type="submit" class="cta-button primary" [disabled]="signupForm.invalid">Submit</button>
+      </form>
+      <p *ngIf="message" class="success">{{ message }}</p>
+      <p *ngIf="error" class="error-messege">{{ error }}</p>
+    </div>
   </div>
   

@@ -28,7 +28,12 @@ export class HeaderComponent implements OnInit {
         this.router.navigate(['/%%no-user%%'])
       }
       if(Response.Status == 200){
+
         this.info = Response.Data.Data;
+      if(this.info.Status == "incomplete"){
+        this.router.navigate(['/%%inactive-user%%'])
+      }
+        
         if(this.info.ProfileCovers.length <= 1){
           this.showNavigationArrows = false;
         }

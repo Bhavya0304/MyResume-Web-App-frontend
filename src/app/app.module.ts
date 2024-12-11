@@ -68,6 +68,7 @@ import { UserTimelineBlockComponent } from './Components/Reuseables/user-timelin
 import { ChipsModule } from 'primeng/chips';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { LandingPageComponent } from './Components/Pages/landing-page/landing-page.component';
+import { InactiveUserComponent } from './Components/Pages/inactive-user/inactive-user.component';
 
 
 @NgModule({
@@ -112,6 +113,7 @@ import { LandingPageComponent } from './Components/Pages/landing-page/landing-pa
     UserTimelineComponent,
     UserTimelineBlockComponent,
     LandingPageComponent,
+    InactiveUserComponent,
   ],
   imports: [
     BrowserModule,

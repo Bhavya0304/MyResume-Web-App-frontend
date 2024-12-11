@@ -170,4 +170,7 @@ return this.http.post<Response>(this.server+'usertimelineedit',{data:data},{head
 deleteUserTimeline = (data:any,token:string)=>{
   return this.http.post<Response>(this.server+'usertimelinedelete',{data:data},{headers:{ Authorization:token}});
 }
+regsiter = (data:any)=>{
+  return this.http.post<Response>(this.server+'register',{data:data});
+}
 }
