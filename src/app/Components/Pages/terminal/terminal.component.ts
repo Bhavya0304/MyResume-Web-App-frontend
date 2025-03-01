@@ -71,11 +71,11 @@ export class TerminalComponent implements OnInit {
       else if(command == ""){
         return "";
       }
-      else if(command == "registe"){
-        return "Will soon be available!"
+      else if(command == "create app"){
+        this.router.navigate(['home']);
       }
       else if(command == "help"){
-        return `<h6><b>Welcome User, Here are some commands for you.</b></h6><br>&nbsp;&nbsp; 'hello' -  Command to print Hello world<br><br>&nbsp;&nbsp; 'login' -  Command to login in your account!<br><br>&nbsp;&nbsp; 'logout' -  Command to logout from your account!<br><br>&nbsp;&nbsp; 'dashboard' -  Command to enter in your account!<br><br>&nbsp;&nbsp; 'clear' -  Command to clear terminal!<br><br>`;
+        return `<h6><b>Welcome User, Here are some commands for you.</b></h6><br>&nbsp;&nbsp; 'hello' -  Command to print Hello world<br><br>&nbsp;&nbsp; 'login' -  Command to login in your account!<br><br>&nbsp;&nbsp; 'logout' -  Command to logout from your account!<br><br>&nbsp;&nbsp; 'dashboard' -  Command to enter in your account!<br><br><br><br>&nbsp;&nbsp; 'create app' -  Create your own prfile just like this!<br><br>&nbsp;&nbsp; 'clear' -  Command to clear terminal!<br><br>`;
       }
       return "Command not found! (Type `help` if you need help with available commands!)";
   })

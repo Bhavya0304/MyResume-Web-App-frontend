@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  API_URI:"http://localhost:3001/api/",
-  ADMIN_URI:"http://localhost:3001/sudouser/"
+  // API_URI:"http://localhost:3001/api/",
+  // ADMIN_URI:"http://localhost:3001/sudouser/"
+   API_URI:"https://api.joshibhavya.com/api/",
+  ADMIN_URI:"https://api.joshibhavya.com/sudouser/"
 };
 
 /*

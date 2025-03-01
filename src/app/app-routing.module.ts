@@ -51,9 +51,9 @@ const routes: Routes = [
   ] },
   { path: '%%no-user%%', component: NoUserComponent },
   { path: '%%inactive-user%%', component: InactiveUserComponent },
+  { path: 'home', component: LandingPageComponent },
   { path: ':id', component: HomepageComponent },
-  { path: '/', component: HomepageComponent },
-  { path: '/home', component: LandingPageComponent }
+  { path: '', component: HomepageComponent,data:{id:'bhavya0304'} }
 ];
 
 @NgModule({
