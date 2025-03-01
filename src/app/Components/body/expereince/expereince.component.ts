@@ -17,6 +17,9 @@ export class ExpereinceComponent implements OnInit {
 
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserExperience(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.expirence = Response.Data.Data;

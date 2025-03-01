@@ -22,6 +22,9 @@ export class TagsButtonComponent implements OnInit {
   
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserSkillTag(user).subscribe((Response)=>{
       console.log(Response);
       if(Response.Status == 200){

@@ -16,6 +16,9 @@ export class SocialButtonsComponent implements OnInit {
 
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserSocialButton(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.socials = Response.Data.Data;

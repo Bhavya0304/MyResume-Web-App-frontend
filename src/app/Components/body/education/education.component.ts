@@ -17,6 +17,9 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserEducation(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.educations = Response.Data.Data;

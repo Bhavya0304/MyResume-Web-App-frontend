@@ -21,6 +21,9 @@ export class HeaderComponent implements OnInit {
 
     this.showImg = false;
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserInfo(user).subscribe((Response)=>{
     
       console.log(user);

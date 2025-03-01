@@ -38,6 +38,9 @@ scrollHandler(events:any) {
   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
   this.Offset = this.Offset +1;
   var user = this.route.snapshot.paramMap.get('id');
+  if(user == ""){
+    user = "bhavya0304";
+  }
   this.http.getUserTimeline(user,{
     offset:this.Offset,
     length:this.Length

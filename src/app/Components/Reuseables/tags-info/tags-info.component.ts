@@ -16,6 +16,9 @@ export class TagsInfoComponent implements OnInit {
 
   ngOnInit(): void {
     var user = this.route.snapshot.paramMap.get('id');
+    if(user == ""){
+      user = "bhavya0304";
+    }
     this.http.getUserInfoTag(user).subscribe((Response)=>{
       if(Response.Status == 200){
         this.tags = Response.Data.Data;
